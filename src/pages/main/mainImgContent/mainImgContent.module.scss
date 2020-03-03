@@ -1,0 +1,43 @@
+.mainImgContent{
+    width: 100%;
+    height: 100vh;
+    background-image: url(/img/mainImg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height:900px;
+    .content{
+        padding-top: 35vh;
+        color: #fff;
+        .subMessage{
+            font-size: 30px;
+            font-weight: 500;
+        }
+        .mainMessage{
+            font-size: 72px;
+            font-weight: 600;
+            margin-top: 32px;
+            line-height: 1.29;
+        }
+        .btnArea{
+            margin-top: 47px;
+        }
+    }
+    .scrollDown{
+        position: absolute;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 500;
+        bottom: 50px;
+        text-align: center;
+        width: 100%;
+        img{
+            margin-bottom: 9px;
+        }
+        div{
+            text-align: center;
+            width: 100%;
+        }
+    }
+}

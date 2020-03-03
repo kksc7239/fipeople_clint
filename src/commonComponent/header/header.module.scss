@@ -1,0 +1,66 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:80px;
+    z-index: 1;
+    .content{
+        height: 100%;
+        max-width: 1240px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo{
+            color: #ff6f61;
+            font-weight: 600;
+            font-size: 22px;
+        }
+        .nav{
+            display: inline-block;
+            ul{
+                li{
+                    float: left;
+                    margin-right: 80px;
+                    a{
+                        color: #fff;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .memberNav{
+            display: inline-block;
+            ul{
+                li{
+                    float: left;
+                    margin-left: 41px;
+                    font-size: 14px;
+                    position: relative;
+                    a{
+                        color: #fff;
+                        text-decoration: none;
+                        font-weight: 300px;
+                    }
+                    &:before{
+                        content: '';
+                        display: inline-block;
+                        width: 1px;
+                        height: 14px;
+                        background-color: #c2c2c2;
+                        position: absolute;
+                        left: -20px;
+                        top: 1px;
+                    }
+                    &:nth-child(1) {
+                        margin-left: 0;
+                        &:before{
+                            content: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
