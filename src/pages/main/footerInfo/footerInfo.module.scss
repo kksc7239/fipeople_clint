@@ -1,0 +1,19 @@
+.wrapper{
+    height: 360px;
+    background-image: url('/img/footerImg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    .text{
+        font-size: 44px;
+        color: #fff;
+        line-height: 1.2;
+        text-align: center;
+        font-weight: 600;
+        padding-top: 74px;
+    }
+    .btnArea{
+        text-align: center;
+        margin-top: 40px;
+    }
+}

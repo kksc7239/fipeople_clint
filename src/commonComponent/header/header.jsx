@@ -3,8 +3,12 @@ import style from './header.module.scss';
 
 class header extends Component {
     render() {
+        const headerStyle = [style.header];
+        if(this.props.headerBackGround === true) {
+            headerStyle.push(style.backGroundHeader);
+        }
         return (
-            <header className={style.header}>
+            <header className={headerStyle.join(' ')}>
                 <div className={style.content}>
                     <div className={style.logo}>FIPEOPLE</div>
                     <div>
@@ -27,5 +31,7 @@ class header extends Component {
         );
     }
 }
-
+header.defaultProps = {
+    headerBackGround: true
+};
 export default header;
