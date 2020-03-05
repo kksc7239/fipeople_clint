@@ -1,0 +1,20 @@
+.underlineText{
+    font-size: 20px;
+    font-weight: bold;
+    color: #171717;
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+    &::after{
+        content: '';
+        display: inline-block;
+        left: 0;
+        right: 0;
+        bottom: -5px;
+        position: absolute;
+        background-color: #ffc2bc;
+        border-radius: 2px;
+        height: 15px;
+        z-index: -1;
+    }
+}

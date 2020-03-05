@@ -1,3 +1,22 @@
 .wrapper{
-    height: 790px;
+    height: 770px;
+    .title{
+        margin-top: 150px;
+        text-align: center;
+        color: #171717;
+        font-size: 44px;
+        font-weight: 600;
+    }
+    .subTitle{
+        margin-top: 49px;
+    }
+    .ticketInfo{
+        color: #3b3b3b;
+        font-size: 26px;
+        font-weight: 600;
+        margin-top: 30px;
+    }
+    .image{
+        margin-top: 66px;
+    }
 }
