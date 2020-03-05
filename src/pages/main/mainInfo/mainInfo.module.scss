@@ -1,7 +1,41 @@
 .wrapper{
     height: 700px;
-    background-color: blue;
     .title{
         padding-top: 100px;
+    }
+    .step{
+        .stepItem{
+            margin-top: 55px;
+            .stepNumber{
+                font-size: 18px;
+                font-weight: 600;
+                color: #fff;
+                display: inline-block;
+                width: 36px;
+                height: 36px;
+                background-color: #ff6f61;
+                border-radius: 36px;
+                text-align: center;
+                box-sizing: border-box;
+                padding-top: 8px;
+            }
+            .stepImg{
+                margin-top: 34px;
+            }
+            .stepTitle{
+                font-size: 44px;
+                font-weight: 600;
+                margin-top: 46px;
+                line-height: 1.09;
+                color: #303030;
+            }
+            .stepContent{
+                color: #303030;
+                font-size: 24px;
+                font-weight: 500;
+                line-height: 1.5;
+                margin-top: 22px;
+            }
+        }
     }
 }
