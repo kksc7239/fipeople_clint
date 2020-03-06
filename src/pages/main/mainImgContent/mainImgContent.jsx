@@ -19,6 +19,9 @@ class mainImgContent extends Component {
             }, 1000);
         }, 4700);
     }
+    moveBottom() {
+        window.scrollTo(0, window.innerHeight-80);
+    }
     render() {
         return (
             <div className={style.mainImgContent} id="mainImgContent">
@@ -29,7 +32,7 @@ class mainImgContent extends Component {
                 </div>
                 <div className={style.scrollDown}>
                     <div className={style.scrollIcon}>
-                        <div className={style.mousey}>
+                        <div className={style.mousey} onClick = {() => this.moveBottom()}>
                             <div className={style.scroller}></div>
                         </div>
                     </div>
