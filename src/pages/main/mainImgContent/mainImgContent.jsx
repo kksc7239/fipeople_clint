@@ -12,7 +12,11 @@ class mainImgContent extends Component {
                     <div className={style.btnArea}><RoundButton>지금 시작하기</RoundButton></div>
                 </div>
                 <div className={style.scrollDown}>
-                    <img src='/img/scrollDown.png' alt="scroll Down" title="scrollDown"></img>
+                    <div class={style.scrollIcon}>
+                        <div class={style.mousey}>
+                            <div class={style.scroller}></div>
+                        </div>
+                    </div>
                     <div>Scroll Down</div>
                 </div>
             </div>
