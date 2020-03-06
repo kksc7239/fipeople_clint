@@ -20,7 +20,7 @@ class main extends Component {
         }.bind(this));
     }
     componentWillUnmount() {
-        window.addEventListener('scroll', function() {
+        window.removeEventListener('scroll', function() {
             this.onScroll();
         }.bind(this));
     }

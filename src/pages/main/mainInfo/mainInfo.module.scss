@@ -4,7 +4,12 @@
         padding-top: 100px;
     }
     .step{
+        display: flex;
+        max-width: 1240px;
+        justify-content: space-between;
+        margin: 0 auto;
         .stepItem{
+            width: 330px;
             margin-top: 55px;
             .stepNumber{
                 font-size: 18px;

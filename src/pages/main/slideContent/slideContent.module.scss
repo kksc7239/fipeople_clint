@@ -2,7 +2,57 @@
     height: 570px;
     width: 100%;
     background-color: #fff7f7;
+    position: relative;
     .title{
         padding-top: 100px;
+    }
+    .slideBox{
+        position: relative;
+        .slideItem{
+            transition: 0.5s;
+            margin-top: 50px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            &.active{
+                opacity: 1;
+            }
+            .slideContent{
+                margin-top: 34px;
+                font-size: 38px;
+                color: #171717;
+                font-weight: 600;
+                line-height: 1.29;
+            }
+            .slideWriter{
+                margin-top: 18px;
+                font-size: 20px;
+                font-weight: 500;
+                color: #171717;
+            }
+        }
+    }
+    .slideDot{
+        margin-top: 48px;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        .dot{
+            width: 8px;
+            height: 8px;
+            background-color: #dfdfdf;
+            border-radius: 4px;
+            margin: 0 6px;
+            transition: 0.5s;
+            cursor: pointer;
+            &.active{
+                background-color: #ff6f61;
+                width: 24px;
+            }
+        }
     }
 }
