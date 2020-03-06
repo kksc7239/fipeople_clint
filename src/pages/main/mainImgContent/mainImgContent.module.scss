@@ -8,7 +8,7 @@
     position: relative;
     min-height:900px;
     .content{
-        padding-top: 35vh;
+        padding-top: 32vh;
         color: #fff;
         .subMessage{
             font-size: 30px;
@@ -19,6 +19,7 @@
             font-weight: 600;
             margin-top: 32px;
             line-height: 1.29;
+            min-height: 190px;
         }
         .btnArea{
             margin-top: 47px;
