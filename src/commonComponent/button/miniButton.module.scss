@@ -1,0 +1,110 @@
+.button{
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    padding: 14px;
+    background-color: rgba($color: #ff6f61, $alpha: 1.0);
+    border-radius: 8px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    height: 58px;
+    &:before, &:after {
+        position: absolute;
+        top: 50%;
+        content: '';
+        width: 20px;
+        height: 20px;
+        background-color: rgba($color: #ff6f61, $alpha: 1.0);
+        border-radius: 50%;
+        z-index: -1;
+    }
+    &:before {
+        left: -20px;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    &:after {
+        right: -20px;
+        -webkit-transform: translate(50%, -50%);
+        transform: translate(50%, -50%);
+    }
+    &:hover, &.active {
+        transition: 0.5s;
+        background-color: rgba($color: #f8a69f, $alpha: 1);
+        &:before {
+            -webkit-animation: criss-cross-left 1s both;
+            animation: criss-cross-left 1s both;
+            -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+          }
+          &:after {
+            -webkit-animation: criss-cross-right 1s both;
+            animation: criss-cross-right 1s both;
+            -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+          }
+    }
+}
+@-webkit-keyframes criss-cross-left {
+    0% {
+        left: -20px;
+    }
+    50% {
+        left: 50%;
+        width: 20px;
+        height: 20px;
+    }
+    100% {
+        left: 50%;
+        width: 375px;
+        height: 375px;
+    }
+}
+  
+@keyframes criss-cross-left {
+    0% {
+        left: -20px;
+    }
+    50% {
+        left: 50%;
+        width: 20px;
+        height: 20px;
+    }
+    100% {
+        left: 50%;
+        width: 375px;
+        height: 375px;
+    }
+}
+@-webkit-keyframes criss-cross-right {
+    0% {
+        right: -20px;
+    }
+    50% {
+        right: 50%;
+        width: 20px;
+        height: 20px;
+    }
+    100% {
+        right: 50%;
+        width: 375px;
+        height: 375px;
+    }
+}
+@keyframes criss-cross-right {
+    0% {
+        right: -20px;
+    }
+    50% {
+        right: 50%;
+        width: 20px;
+        height: 20px;
+    }
+    100% {
+        right: 50%;
+        width: 375px;
+        height: 375px;
+    }
+}

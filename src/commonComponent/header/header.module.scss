@@ -13,10 +13,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        .logo{
+        .logo a{
             color: #ff6f61;
             font-weight: 600;
             font-size: 22px;
+            text-decoration: none;
         }
         .nav{
             display: inline-block;

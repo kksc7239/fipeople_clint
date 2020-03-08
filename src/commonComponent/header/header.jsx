@@ -10,12 +10,12 @@ class header extends Component {
         return (
             <header className={headerStyle.join(' ')}>
                 <div className={style.content}>
-                    <div className={style.logo}>FIPEOPLE</div>
+                    <div className={style.logo}><a href='/'>FIPEOPLE</a></div>
                     <div>
                         <nav className={style.nav}>
                             <ul>
                                 <li><a href='#'>이용방법</a></li>
-                                <li><a href='#'>친구찾기</a></li>
+                                <li><a href='/events'>친구찾기</a></li>
                                 <li><a href='#'>티켓구매</a></li>
                             </ul>
                         </nav>
