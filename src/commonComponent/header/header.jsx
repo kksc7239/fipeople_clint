@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import style from './header.module.scss';
+import { Route, Link } from 'react-router-dom';
 
 class header extends Component {
     render() {
@@ -10,19 +11,19 @@ class header extends Component {
         return (
             <header className={headerStyle.join(' ')}>
                 <div className={style.content}>
-                    <div className={style.logo}><a href='/'>FIPEOPLE</a></div>
+                    <div className={style.logo}><Link to='/'>FIPEOPLE</Link></div>
                     <div>
                         <nav className={style.nav}>
                             <ul>
-                                <li><a href='#'>이용방법</a></li>
-                                <li><a href='/events'>친구찾기</a></li>
-                                <li><a href='#'>티켓구매</a></li>
+                                <li><Link to='#'>이용방법</Link></li>
+                                <li><Link to='/events'>친구찾기</Link></li>
+                                <li><Link to='#'>티켓구매</Link></li>
                             </ul>
                         </nav>
                         <nav className={style.memberNav}>
                             <ul>
-                                <li><a href='#'>회원가입</a></li>
-                                <li><a href='#'>로그인</a></li>
+                                <li><Link to='#'>회원가입</Link></li>
+                                <li><Link to='#'>로그인</Link></li>
                             </ul>
                         </nav>
                     </div>
