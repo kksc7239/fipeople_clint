@@ -1,0 +1,24 @@
+.surveyContent{
+    .surveyHead{
+        margin-top: 35px;
+        .faceGraph{
+            width: 200px;
+            height: 200px;
+            background-color: #eee;
+            display: inline-block;
+            border-radius: 50%;
+            .faceGraphInner{
+                width: 180px;
+                height: 180px;
+                display: inline-block;
+                margin: 10px;
+                border-radius: 50%;
+                background: url('/img/face.png') center no-repeat;
+                background-color: #fff;
+                .progress{
+                    
+                }
+            }
+        }
+    }
+}
