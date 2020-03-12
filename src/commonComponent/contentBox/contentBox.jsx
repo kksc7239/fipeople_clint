@@ -5,14 +5,11 @@ class contentBox extends Component {
     render() {
         return (
             <div className={style.contentBox}>
-                <div className={style.content} style={{ maxWidth : this.props.width+'px'}}>
+                <div className={style.content}>
                     {this.props.children}
                 </div>
             </div>
         );
     }
-}
-contentBox.defaultProps = {
-    width : 780
 }
 export default contentBox;
