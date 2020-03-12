@@ -7,6 +7,7 @@
             background-color: #eee;
             display: inline-block;
             border-radius: 50%;
+            transition: 3.5s;
             .faceGraphInner{
                 width: 180px;
                 height: 180px;
@@ -15,9 +16,6 @@
                 border-radius: 50%;
                 background: url('/img/face.png') center no-repeat;
                 background-color: #fff;
-                .progress{
-                    
-                }
             }
         }
     }
