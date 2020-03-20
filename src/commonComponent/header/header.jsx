@@ -21,10 +21,12 @@ class header extends Component {
                             </ul>
                         </nav>
                         <nav className={style.memberNav}>
-                            <ul>
+                            {/* <ul>
                                 <li><Link to='#'>회원가입</Link></li>
                                 <li><Link to='#'>로그인</Link></li>
-                            </ul>
+                            </ul> */}
+                            {/* <Link to='#'><img src="/img/kakao_login_btn_small.png" alt="카카오톡 로그인하기" title="카카오톡 로그인하기"></img></Link> */}
+                            <Link to='#'><img src="/img/kakao_login_btn_small_ko.png" alt="카카오톡 로그인하기" title="카카오톡 로그인하기"></img></Link>
                         </nav>
                     </div>
                 </div>

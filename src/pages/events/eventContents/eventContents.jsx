@@ -4,7 +4,8 @@ import Content from '../../../commonComponent/contentBox/content';
 import MainTitleH1 from '../../../commonComponent/mainTitle/mainTitleH1';
 import SubTitle from '../../../commonComponent/subTitle/subTitle';
 import style from '../eventContents/eventContents.module.scss';
-import MiniButton from '../../../commonComponent/button/miniButton'
+import MiniButton from '../../../commonComponent/button/miniButton';
+import { Route, Link } from 'react-router-dom';
 
 class eventContents extends Component {
     render() {
@@ -22,28 +23,28 @@ class eventContents extends Component {
                                     <div className={style.title}>첫 진행 이벤트!! 친구 찾아라!! 제목뭘로하지 첫 진행 이벤트!! 친구 찾아라!! 제목뭘로하지</div>
                                     <div className={style.eventDate}>진행기간 : <span className={style.date}>2020.03.03 ~ 2020.04.04</span><br/> 발표일 : <span className={style.date}>2020.04.06</span></div>
                                 </div>
-                                <div className={style.btnArea}><MiniButton width="80%">시작하기</MiniButton></div>
+                                <div className={style.btnArea}><Link to='survey'><MiniButton width="80%">시작하기</MiniButton></Link></div>
                             </div>
                             <div className={style.eventItem}>
                                 <div className={style.eventText}>
                                     <div className={style.title}>첫 진행 이벤트!! 친구 찾아라!! 제목뭘로하지 첫 진행 이벤트!! 친구 찾아라!! 제목뭘로하지</div>
                                     <div className={style.eventDate}>진행기간 : <span className={style.date}>2020.03.03 ~ 2020.04.04</span><br/> 발표일 : <span className={style.date}>2020.04.06</span></div>
                                 </div>
-                                <div className={style.btnArea}><MiniButton width="80%">시작하기</MiniButton></div>
+                                <div className={style.btnArea}><Link to='survey'><MiniButton width="80%">시작하기</MiniButton></Link></div>
                             </div>
                             <div className={style.eventItem}>
                                 <div className={style.eventText}>
                                     <div className={style.title}>첫 진행 이벤트!! 친구 찾아라!! 제목뭘로하지 첫 진행 이벤트!! 친구 찾아라!! 제목뭘로하지</div>
                                     <div className={style.eventDate}>진행기간 : <span className={style.date}>2020.03.03 ~ 2020.04.04</span><br/> 발표일 : <span className={style.date}>2020.04.06</span></div>
                                 </div>
-                                <div className={style.btnArea}><MiniButton width="80%">시작하기</MiniButton></div>
+                                <div className={style.btnArea}><Link to='survey'><MiniButton width="80%">시작하기</MiniButton></Link></div>
                             </div>
                             <div className={style.eventItem}>
                                 <div className={style.eventText}>
                                     <div className={style.title}>첫 진행 이벤트!! 친구 찾아라!! 제목뭘로하지 첫 진행 이벤트!! 친구 찾아라!! 제목뭘로하지</div>
                                     <div className={style.eventDate}>진행기간 : <span className={style.date}>2020.03.03 ~ 2020.04.04</span><br/> 발표일 : <span className={style.date}>2020.04.06</span></div>
                                 </div>
-                                <div className={style.btnArea}><MiniButton width="80%">시작하기</MiniButton></div>
+                                <div className={style.btnArea}><Link to='survey'><MiniButton width="80%">시작하기</MiniButton></Link></div>
                             </div>
                         </div>
                     </Content>
