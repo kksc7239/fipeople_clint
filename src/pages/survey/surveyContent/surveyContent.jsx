@@ -14,6 +14,11 @@ class surveyContent extends Component {
                         <div className={[style.faceGraph, 'radialProgress-60'].join(' ')}>
                             <div className={style.faceGraphInner}></div>
                         </div>
+                        <div className={style.bubbleWrap}>
+                            <div className={style.bubble}>
+                                질문 질문입니다?
+                            </div>
+                        </div>
                     </div>
                 </ContentBox>
             </div>

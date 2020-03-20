@@ -1,6 +1,7 @@
 .surveyContent{
     .surveyHead{
         margin-top: 35px;
+        position: relative;
         .faceGraph{
             width: 200px;
             height: 200px;
@@ -18,5 +19,48 @@
                 background-color: #fff;
             }
         }
+        .bubbleWrap{
+            position: absolute;
+            left: calc(50% + 137px);
+            top: 50%;
+            transform: translateY(-50%);
+            .bubble{
+                position: relative;
+                padding: 23px 40px;
+                background-color: #fff;
+                border-radius: 11px;
+                border: #171717 solid 4px;
+                display: inline-block;
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 1.5;
+                text-align: left;
+                &:after{
+                    content: '';
+                    position: absolute;
+                    border-style: solid;
+                    border-width: 6px 12px 6px 0px;
+                    border-color: transparent #fff;
+                    display: block;
+                    width: 0;
+                    z-index: 1;
+                    top: calc(50% - 6px); 
+                    left: -12px;
+                }
+                &:before{
+                    content: '';
+                    position: absolute;
+                    border-style: solid;
+                    border-width: 10px 20px 10px 0px;
+                    border-color: transparent #171717;
+                    display: block;
+                    width: 0;
+                    z-index: 1;
+                    top: calc(50% - 10px); 
+                    left: -20px;
+                }
+            }
+        }
+        
     }
 }
