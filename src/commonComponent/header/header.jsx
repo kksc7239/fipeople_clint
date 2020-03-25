@@ -4,9 +4,12 @@ import { Route, Link } from 'react-router-dom';
 
 class header extends Component {
     kakaoLogin(e) {
+        let kakaoWindow;
         e.preventDefault();
-        console.log(e);
-        console.log(e.target.attributes);
+        window.open(e.currentTarget.href, 'kakaoPopup', 'top=10, left=10, width=500, height=600, status=no, menubar=no, toolbar=no, resizable=no');
+        window.popupMessage = function(data) {
+            console.log(data);
+        }
     }
 
     render() {
