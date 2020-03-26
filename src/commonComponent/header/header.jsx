@@ -14,8 +14,14 @@ class header extends Component {
     }
     kakaoLogin(e) {
         let kakaoWindow;
+
+        let loginPopupParam = '';
+        if (process.env.NODE_ENV === 'development') {
+            loginPopupParam = `?redirect=${encodeURIComponent(process.env.REACT_APP_KAKAO_OAUTH_REDIRECT)}`
+        }
+
         e.preventDefault();
-        window.open(e.currentTarget.href, 'kakaoPopup', 'top=10, left=10, width=500, height=600, status=no, menubar=no, toolbar=no, resizable=no');
+        window.open(`${process.env.REACT_APP_API_URL}/auth/oauth-kakao-init${loginPopupParam}`, 'kakaoPopup', 'top=10, left=10, width=500, height=600, status=no, menubar=no, toolbar=no, resizable=no');
         window.popupMessage = function(data) {
             headerVm.memberSetData(data);
         }
@@ -49,7 +55,7 @@ class header extends Component {
             //<a onClick={(e) => this.kakaoLogin(e)} href='http://localhost:3000/static/temp/oauth-redirect.html?data=%7B"success":true,"isNew":true,"state":"e391d1f3e2a44279a2680bd0e8821bb3","id":1308988667,"name":"장병현","image":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCABuAG4DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDs6KKK/n0+zCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAor6W2r/do2r/dr9B/1H/6ffh/wTxf7W/ufj/wD5por6W2r/do2r/do/1H/wCn34f8EP7W/ufj/wAA+aaK+ltq/wB2jav92j/Uf/p9+H/BD+1v7n4/8A+aaK+ltq/3aNq/3aP9R/8Ap9+H/BD+1v7n4/8AAPmmivpbav8Ado2r/do/1H/6ffh/wQ/tb+5+P/APmmivpbav92jav92j/Uf/AKffh/wQ/tb+5+P/AAD5por6W2r/AHaNq/3aP9R/+n34f8EP7W/ufj/wB1FFFfoJ4wUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB//2Q=="%7D' target="_blank"><img src="/img/kakao_login_btn_small_ko.png" alt="카카오톡 로그인하기" title="카카오톡 로그인하기"></img></a>
             // 이미가입댄거
             <nav className={style.memberNav}>
-                <a onClick={(e) => this.kakaoLogin(e)} href='http://localhost:3000/static/temp/oauth-redirect.html?data=%7B"success":true,"isNew":false,"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUsInJvbCI6WzFdLCJleHAiOjE1ODUyMDgyMjEsImlzcyI6IlBJRVBFT1BMRSIsInN1YiI6IkFDQ0VTU19UT0tFTiIsImp0aSI6IjNhYWY2NjI0Y2UxNDQ3OTNhZDA5ODZjMjc1M2M2Yzk0In0.-5ZBc4DO0O5HxxfrtA7gxDwHtiilVr0q3qdMH4Tlke0","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJQSUVQRU9QTEUiLCJzdWIiOiJSRUZSRVNIX1RPS0VOIiwianRpIjoiYWY4NTU2NTQwOTg4NDlmYTljNTBiMGM3ZmU1ZjFmYzMifQ.FdSHMdQ4pwDIPT0HKhLajXrtrfM6nzQ-1LbMVu_vNGo","name":"장병현","email":"","image":null%7D' target="_blank"><img src="/img/kakao_login_btn_small_ko.png" alt="카카오톡 로그인하기" title="카카오톡 로그인하기"></img></a>
+                <a onClick={(e) => this.kakaoLogin(e)} href='#' target="_blank"><img src="/img/kakao_login_btn_small_ko.png" alt="카카오톡 로그인하기" title="카카오톡 로그인하기"/></a>
             </nav>
         }
         return (
