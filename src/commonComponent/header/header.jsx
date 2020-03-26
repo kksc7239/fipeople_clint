@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import style from './header.module.scss';
+import headerVm from './headerVm';
 import { Route, Link } from 'react-router-dom';
 
 class header extends Component {
@@ -8,7 +9,7 @@ class header extends Component {
         e.preventDefault();
         window.open(e.currentTarget.href, 'kakaoPopup', 'top=10, left=10, width=500, height=600, status=no, menubar=no, toolbar=no, resizable=no');
         window.popupMessage = function(data) {
-            console.log(data);
+            headerVm.memberSetData(data);
         }
     }
 
@@ -36,7 +37,10 @@ class header extends Component {
                             </ul> */}
                             {/* <Link to='#'><img src="/img/kakao_login_btn_small.png" alt="카카오톡 로그인하기" title="카카오톡 로그인하기"></img></Link> */}
                             {/* <a href='http://ec2-13-209-174-48.ap-northeast-2.compute.amazonaws.com/api/auth/oauth-kakao-init' target="_blank"><img src="/img/kakao_login_btn_small_ko.png" alt="카카오톡 로그인하기" title="카카오톡 로그인하기"></img></a> */}
+                            {/** 가입 */}
                             <a onClick={(e) => this.kakaoLogin(e)} href='http://localhost:3000/static/temp/oauth-redirect.html?data=%7B%22success%22:true,%22isNew%22:true,%22state%22:%229f9ac873dbc14a1d9a5d6ab53e5a1539%22,%22id%22:1308988667,%22name%22:%22%EC%9E%A5%EB%B3%91%ED%98%84%22,%22image%22:%22data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCABuAG4DASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDs6KKK/n0+zCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAor6W2r/do2r/dr9B/1H/6ffh/wTxf7W/ufj/wD5por6W2r/do2r/do/1H/wCn34f8EP7W/ufj/wAA+aaK+ltq/wB2jav92j/Uf/p9+H/BD+1v7n4/8A+aaK+ltq/3aNq/3aP9R/8Ap9+H/BD+1v7n4/8AAPmmivpbav8Ado2r/do/1H/6ffh/wQ/tb+5+P/APmmivpbav92jav92j/Uf/AKffh/wQ/tb+5+P/AAD5por6W2r/AHaNq/3aP9R/+n34f8EP7W/ufj/wB1FFFfoJ4wUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB//2Q==%22%7D' target="_blank"><img src="/img/kakao_login_btn_small_ko.png" alt="카카오톡 로그인하기" title="카카오톡 로그인하기"></img></a>
+                            {/** 이미가입댄거 */}
+                            <a onClick={(e) => this.kakaoLogin(e)} href='http://localhost:3000/static/temp/oauth-redirect.html?data=%7B%22success%22:true,%22isNew%22:false,%22accessToken%22:%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjIsInJvbCI6WzFdLCJleHAiOjE1ODUyMDA2ODEsImlzcyI6IlBJRVBFT1BMRSIsInN1YiI6IkFDQ0VTU19UT0tFTiIsImp0aSI6Ijg0ODVjOWZlNjY3MTQwMWViZWMwZTY1NzdlZTM4MGRhIn0.QOg3sEUvzQbEwlP84Q5_XsY-P8GqFyuRQa-VFiKZhFM%22,%22refreshToken%22:%22eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJQSUVQRU9QTEUiLCJzdWIiOiJSRUZSRVNIX1RPS0VOIiwianRpIjoiZmJmNzMxMjg1YmU0NGIwYzk0NjI3ZTE5YzNjZTRlODQifQ.cbqyHC9uSjy7GyFl-ClDkEit6eVu_rVU8Oj86szm1n0%22,%22name%22:%22%EC%9E%A5%EB%B3%91%ED%98%84%22,%22email%22:null,%22image%22:null%7D' target="_blank"><img src="/img/kakao_login_btn_small_ko.png" alt="카카오톡 로그인하기" title="카카오톡 로그인하기"></img></a>
                         </nav>
                     </div>
                 </div>

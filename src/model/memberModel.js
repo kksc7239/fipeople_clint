@@ -1,5 +1,9 @@
 import { observable, action } from 'mobx';
 class MemberModel {
-    @observable memberData = {};
+    @observable memberData = {
+        name : '',
+        email : '',
+        image : ''
+    };
 }
 export default new MemberModel();
