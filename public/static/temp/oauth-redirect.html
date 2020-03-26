@@ -1,6 +1,6 @@
 <script>
     var params = {}, data = {};
     window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
-    opener.popupMessage(JSON.parse(decodeURI(params.data)));
+    opener.popupMessage(JSON.parse(decodeURIComponent(params.data)));
     window.close();
 </script>
