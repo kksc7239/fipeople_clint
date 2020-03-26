@@ -37,6 +37,11 @@
             }
         }
         .memberNav{
+            .profileImg{
+                width: 47px;
+                height: 47px;
+                border-radius: 50%;
+            }
             display: inline-block;
             ul{
                 li{
@@ -70,6 +75,26 @@
                         }
                     }
                 }
+            }
+        }
+        .memberText{
+            font-size: 14px;
+            font-weight: 300;
+            color: #fff;
+            margin-left: 16px;
+        }
+        .logout{
+            font-size: 11px;
+            color: rgba($color: #ff6f61, $alpha: 1.0);
+            background-color: #fff;
+            border-radius: 3px;
+            border: none;
+            height: 27px;
+            margin-left: 20px;
+            &:hover{
+                transition: 0.3s;
+                color: #fff;
+                background-color: rgba($color: #ff6f61, $alpha: 1.0);
             }
         }
     }
@@ -106,6 +131,23 @@
                     }
                 }
             }   
+        }
+        .memberText{
+            color: #171717;
+        }
+        .logout{
+            font-size: 11px;
+            color: #fff;
+            background-color: rgba($color: #f8a69f, $alpha: 1);;
+            border-radius: 3px;
+            border: none;
+            height: 27px;
+            margin-left: 20px;
+            &:hover{
+                transition: 0.3s;
+                color: #fff;
+                background-color: rgba($color: #ff6f61, $alpha: 1.0)
+            }
         }
     }
 }

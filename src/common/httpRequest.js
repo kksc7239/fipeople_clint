@@ -10,7 +10,6 @@ function get() {
 }
 function post(url, body, option) {
     let requestOption = {}
-    
     if (option.token) {
         requestOption.Authorization = '' //토큰넣어야댐
     }
