@@ -24,7 +24,7 @@ class eventContents extends Component {
                                     <div className={style.title}>잘맞는 친구찾기 5월 1기모집!</div>
                                     <div className={style.price}>15,000원</div>
                                     <div className={style.btnArea}>
-                                        <EventButton width="100%">진행기간 : 2020.03.01 ~ 2020.03.31<span className={style.space}></span> 발표일 : 05.02</EventButton>
+                                        <Link to="/survey"><EventButton width="100%">진행기간 : 2020.03.01 ~ 2020.03.31<span className={style.space}></span> 발표일 : 05.02</EventButton></Link>
                                     </div>
                                 </div>
                             </div>
