@@ -1,15 +1,20 @@
 .button{
-    font-size: 14px;
+    font-size: 13px;
     color: #fff;
-    font-weight: 600;
-    padding: 14px;
+    font-weight: 500;
     background-color: rgba($color: #ff6f61, $alpha: 1.0);
     border-radius: 8px;
     border: none;
     position: relative;
     overflow: hidden;
     z-index: 1;
-    height: 45px;
+    height: 40px;
+    &.disabled{
+        background-color: rgba($color: #f8a69f, $alpha: 1);
+    }
+    &.notUse{
+        background-color: rgba($color: black, $alpha: 0.25);
+    }
     &:before, &:after {
         position: absolute;
         top: 50%;
@@ -30,7 +35,7 @@
         -webkit-transform: translate(50%, -50%);
         transform: translate(50%, -50%);
     }
-    &:hover, &.active {
+    &:not([disabled]):hover, &.active {
         transition: 0.5s;
         background-color: rgba($color: #f8a69f, $alpha: 1);
         &:before {
@@ -58,8 +63,8 @@
     }
     100% {
         left: 50%;
-        width: 375px;
-        height: 375px;
+        width: 500px;
+        height: 500px;
     }
 }
   
@@ -74,8 +79,8 @@
     }
     100% {
         left: 50%;
-        width: 375px;
-        height: 375px;
+        width: 500px;
+        height: 500px;
     }
 }
 @-webkit-keyframes criss-cross-right {
@@ -89,8 +94,8 @@
     }
     100% {
         right: 50%;
-        width: 375px;
-        height: 375px;
+        width: 500px;
+        height: 500px;
     }
 }
 @keyframes criss-cross-right {
@@ -104,7 +109,7 @@
     }
     100% {
         right: 50%;
-        width: 375px;
-        height: 375px;
+        width: 500px;
+        height: 500px;
     }
 }
