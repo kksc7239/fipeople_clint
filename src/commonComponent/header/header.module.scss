@@ -19,6 +19,9 @@
             font-size: 22px;
             text-decoration: none;
         }
+        .logo img{
+            width: 110px;
+        }
         .nav{
             display: inline-block;
             ul{
@@ -78,7 +81,7 @@
             }
         }
         .memberText{
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 300;
             color: #fff;
             margin-left: 16px;
@@ -90,7 +93,7 @@
             border-radius: 3px;
             border: none;
             height: 27px;
-            margin-left: 20px;
+            margin-left: 35px;
             &:hover{
                 transition: 0.3s;
                 color: #fff;
@@ -142,7 +145,7 @@
             border-radius: 3px;
             border: none;
             height: 27px;
-            margin-left: 20px;
+            margin-left: 35px;
             &:hover{
                 transition: 0.3s;
                 color: #fff;

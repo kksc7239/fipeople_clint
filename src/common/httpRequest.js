@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://ec2-13-209-174-48.ap-northeast-2.compute.amazonaws.com';
+const baseURL = process.env.REACT_APP_API_URL;
 const httpRequest = axios.create({
     baseURL: baseURL
 });

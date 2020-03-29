@@ -21,7 +21,7 @@ class memberService {
         localStorage.setItem("refreshToken", data.refreshToken);
         localStorage.setItem("name", data.name);
         localStorage.setItem("email", data.email);
-        localStorage.setItem("image", data.image);
+        localStorage.setItem("image", process.env.REACT_APP_API_URL+data.image.publicPath);
         this.logInState();
     }
     logInState() {
