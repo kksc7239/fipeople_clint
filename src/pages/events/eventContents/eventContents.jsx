@@ -5,9 +5,13 @@ import MainTitleH1 from '../../../commonComponent/mainTitle/mainTitleH1';
 import SubTitle from '../../../commonComponent/subTitle/subTitle';
 import style from '../eventContents/eventContents.module.scss';
 import EventButton from '../../../commonComponent/button/eventButton';
+import eventContentsVm from '../eventContents/eventContentsVm';
 import { Route, Link } from 'react-router-dom';
 
 class eventContents extends Component {
+    componentDidMount() {
+        eventContentsVm.getEvent();
+    }
     render() {
         return (
             <div className={style.eventContents}>
