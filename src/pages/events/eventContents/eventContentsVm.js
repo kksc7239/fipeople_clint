@@ -1,8 +1,12 @@
 import { observable, action } from 'mobx';
 import eventService from '../../../service/eventService';
-class HeaderVm {
+import eventModel from '../../../model/eventModel';
+class EventContentsVm {
     getEvent() {
         eventService.getEventData();
     }
+    get getEventDataList() {
+        return eventModel.eventDataList;
+    }
 }
-export default new HeaderVm();
+export default new EventContentsVm();

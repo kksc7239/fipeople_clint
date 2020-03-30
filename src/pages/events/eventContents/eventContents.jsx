@@ -7,12 +7,17 @@ import style from '../eventContents/eventContents.module.scss';
 import EventButton from '../../../commonComponent/button/eventButton';
 import eventContentsVm from '../eventContents/eventContentsVm';
 import { Route, Link } from 'react-router-dom';
+import { observer } from 'mobx-react';
 
+@observer
 class eventContents extends Component {
     componentDidMount() {
         eventContentsVm.getEvent();
     }
     render() {
+        let EventItem = [];
+        //배열돌려서 데이터 가져와야함
+        console.log(eventContentsVm.getEventDataList);
         return (
             <div className={style.eventContents}>
                 <ContentBox>
