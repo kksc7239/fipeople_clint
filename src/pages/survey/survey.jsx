@@ -4,6 +4,7 @@ import SurveyContent from './surveyContent/surveyContent';
 
 class survey extends Component {
     render() {
+        console.log(this.props.match.params.eventId);
         return (
             <Fragment>
                 <Header></Header>

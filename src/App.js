@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Router>
         <Route path="/events" component={Events} />
-        <Route path="/survey" component={Survey} />
+        <Route path="/survey/:eventId" component={Survey} />
         <Route exact path="/" component={Main} />
       </Router>
     </div>
