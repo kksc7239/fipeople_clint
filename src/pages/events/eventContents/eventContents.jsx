@@ -15,13 +15,16 @@ class eventContents extends Component {
     componentDidMount() {
         eventContentsVm.getEvent();
     }
+    goToSurvey(surveyUserId, eventId) {
+        eventContentsVm.goToSurvey(surveyUserId, eventId);
+    }
     render() {
         let eventItem = [];
-        eventContentsVm.getEventDataList.forEach(function(item, index) {
-            console.log(item)
+        eventContentsVm.getEventDataList.forEach((item, index) => {
+            console.log(item.surveyUserId);
             let evBtn;
             if(item.openstatus === 0) { //진행중
-                evBtn = <Link to={"/survey/"+item.id}><EventButton width="100%">진행기간 : {GetDate.getDate(new Date(item.openDate))}<span className={style.space}></span> 발표일 : {GetDate.getDate(new Date(item.closeDate))}</EventButton></Link>;
+                evBtn = <EventButton width="100%" onClick={() => this.goToSurvey(item.surveyUserId, item.id)}>진행기간 : {GetDate.getDate(new Date(item.openDate))}<span className={style.space}></span> 발표일 : {GetDate.getDate(new Date(item.closeDate))}</EventButton>;
             }
             if(item.openstatus === 1) { //진행전
                 evBtn = <EventButton width="100%" disabled={true}>{GetDate.getDate(new Date(item.openDate))} 진행예정</EventButton>

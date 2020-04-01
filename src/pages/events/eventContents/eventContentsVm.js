@@ -8,5 +8,12 @@ class EventContentsVm {
     get getEventDataList() {
         return eventModel.eventDataList;
     }
+    goToSurvey(surveyUserId, eventId) {
+        if(surveyUserId) { //서베이로 이동
+
+        }else{ //surveyUserId생성
+            eventService.surveyStart(eventId);
+        }
+    }
 }
 export default new EventContentsVm();

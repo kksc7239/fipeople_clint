@@ -14,7 +14,7 @@ class eventButton extends Component {
             classNameArr.push(style.notUse);
         }
         return (
-            <button type="button" className={classNameArr.join(' ')} disabled={this.props.disabled} style={{ width : this.props.width}}>{this.props.children}</button>
+            <button type="button" onClick={this.props.onClick} className={classNameArr.join(' ')} disabled={this.props.disabled} style={{ width : this.props.width}}>{this.props.children}</button>
         );
     }
 }
@@ -22,6 +22,7 @@ eventButton.defaultProps = {
     active : false,
     width : 'auto',
     disabled : false,
-    useYn : true
+    useYn : true,
+    onClick : null
 }
 export default eventButton;

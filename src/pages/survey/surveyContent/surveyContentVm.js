@@ -1,6 +1,6 @@
 import { observable, action } from 'mobx';
 import surveyService from '../../../service/surveyService';
-class surveyVm {
+class surveyContentVm {
     
 }
-export default new surveyVm();
+export default new surveyContentVm();

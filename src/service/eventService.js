@@ -8,5 +8,11 @@ class eventService {
             eventModel.eventDataList = response.data;
         });
     }
+    surveyStart(eventId) {
+        console.log(eventId);
+        post(`/api/survey/${eventId}/start`, {}, {token: true}).then(response => {
+            console.log(response);
+        });
+    }
 }
 export default new eventService();
