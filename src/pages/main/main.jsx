@@ -6,6 +6,7 @@ import SlideContent from './slideContent/slideContent';
 import MainInfo from './mainInfo/mainInfo';
 import TicketInfo from './ticketInfo/ticketInfo';
 import FooterInfo from './footerInfo/footerInfo';
+import Footer from './footer/footer';
 
 class main extends Component {
     constructor(props) {
@@ -45,6 +46,7 @@ class main extends Component {
                 <MainInfo></MainInfo>
                 <TicketInfo></TicketInfo>
                 <FooterInfo></FooterInfo>
+                <Footer></Footer>
             </Fragment>
         );
     }
