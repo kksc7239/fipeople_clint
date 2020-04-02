@@ -8,15 +8,15 @@ const httpRequest = axios.create({
 function get(url, body, option) {
     let requestOption = {}
     if (option.token) {
-        requestOption.Authorization = localStorage.getItem('accessToken') //토큰넣어야댐
+        requestOption.Authorization = 'Bearer ' + localStorage.getItem('accessToken') //토큰넣어야댐
     }
 
-    return httpRequest.get(url, body, {headers: requestOption})
+    return httpRequest.get(url, {params : body, headers: requestOption})
 }
 function post(url, body, option) {
     let requestOption = {}
     if (option.token) {
-        requestOption.Authorization = localStorage.getItem('accessToken') //토큰넣어야댐
+        requestOption.Authorization = 'Bearer ' + localStorage.getItem('accessToken') //토큰넣어야댐
     }
 
     return httpRequest.post(url, body, {headers: requestOption})

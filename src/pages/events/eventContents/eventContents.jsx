@@ -6,9 +6,9 @@ import SubTitle from '../../../commonComponent/subTitle/subTitle';
 import style from '../eventContents/eventContents.module.scss';
 import EventButton from '../../../commonComponent/button/eventButton';
 import eventContentsVm from '../eventContents/eventContentsVm';
-import { Route, Link } from 'react-router-dom';
 import { observer } from 'mobx-react';
 import GetDate from '../../../common/getDate';
+import { withRouter } from "react-router";
 
 @observer
 class eventContents extends Component {
@@ -16,12 +16,11 @@ class eventContents extends Component {
         eventContentsVm.getEvent();
     }
     goToSurvey(surveyUserId, eventId) {
-        eventContentsVm.goToSurvey(surveyUserId, eventId);
+        eventContentsVm.goToSurvey(surveyUserId, eventId, this.props.history.push);
     }
     render() {
         let eventItem = [];
         eventContentsVm.getEventDataList.forEach((item, index) => {
-            console.log(item.surveyUserId);
             let evBtn;
             if(item.openstatus === 0) { //진행중
                 evBtn = <EventButton width="100%" onClick={() => this.goToSurvey(item.surveyUserId, item.id)}>진행기간 : {GetDate.getDate(new Date(item.openDate))}<span className={style.space}></span> 발표일 : {GetDate.getDate(new Date(item.closeDate))}</EventButton>;
@@ -63,4 +62,4 @@ class eventContents extends Component {
     }
 }
 
-export default eventContents;
+export default withRouter(eventContents);

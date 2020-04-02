@@ -4,14 +4,14 @@ import eventModel from '../model/eventModel';
 
 class eventService {
     getEventData(data) {
+        console.log(loginModel.loginData.loginYn);
         get('/api/survey', {}, {token: loginModel.loginData.loginYn}).then(response => {
             eventModel.eventDataList = response.data;
         });
     }
-    surveyStart(eventId) {
-        console.log(eventId);
+    surveyStart(eventId, link) {
         post(`/api/survey/${eventId}/start`, {}, {token: true}).then(response => {
-            console.log(response);
+            link(`/survey/${response.data.surveyUserId}`);
         });
     }
 }
