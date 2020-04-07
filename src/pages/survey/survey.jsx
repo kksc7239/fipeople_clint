@@ -4,11 +4,10 @@ import SurveyContent from './surveyContent/surveyContent';
 
 class survey extends Component {
     render() {
-        console.log(this.props.match.params.surveyUserId);
         return (
             <Fragment>
                 <Header></Header>
-                <SurveyContent></SurveyContent>
+                <SurveyContent surveyUserId={this.props.match.params.surveyUserId}></SurveyContent>
             </Fragment>
         );
     }

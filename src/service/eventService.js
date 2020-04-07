@@ -4,7 +4,6 @@ import eventModel from '../model/eventModel';
 
 class eventService {
     getEventData(data) {
-        console.log(loginModel.loginData.loginYn);
         get('/api/survey', {}, {token: loginModel.loginData.loginYn}).then(response => {
             eventModel.eventDataList = response.data;
         });
