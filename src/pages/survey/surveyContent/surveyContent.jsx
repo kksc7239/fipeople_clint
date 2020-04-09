@@ -6,6 +6,9 @@ import surveyContentVm from './surveyContentVm';
 import './radialProgress.scss';
 import { observer } from 'mobx-react';
 import Content from '../../../commonComponent/contentBox/content';
+import ScoreType from './surveyType/scoreType';
+import MiddleButton from '../../../commonComponent/button/middleButton';
+import { withRouter } from "react-router";
 
 @observer
 class surveyContent extends Component {
@@ -15,7 +18,14 @@ class surveyContent extends Component {
     getQuestion() {
         surveyContentVm.setQuestion(this.props.surveyUserId);
     }
+    goBack() {
+        this.props.history.goBack();
+    }
     render() {
+        let surveyTypeContent;
+        if(surveyContentVm.question.type === "SCORE_7") {
+            surveyTypeContent = <ScoreType/>
+        }
         return (
             <div className={style.surveyContent}>
                 <ContentBox>
@@ -32,8 +42,11 @@ class surveyContent extends Component {
                     </div>
                     <div className={style.surveyBody}>
                         <Content>
-                            asd{/**surveyContentVm에서 타입별로 만들어야함 */}
+                            {surveyTypeContent}
                         </Content>
+                    </div>
+                    <div className={style.btnArea}>
+                         <MiddleButton width="49%" whiteType={true} onClick={() => this.goBack()}>이전</MiddleButton><MiddleButton width="49%">다음</MiddleButton>
                     </div>
                 </ContentBox>
             </div>
@@ -41,4 +54,4 @@ class surveyContent extends Component {
     }
 }
 
-export default surveyContent;
+export default withRouter(surveyContent);
