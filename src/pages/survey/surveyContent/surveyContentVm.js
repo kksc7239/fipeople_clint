@@ -17,5 +17,12 @@ class surveyContentVm {
     get question() {
         return surveyModel.question;
     }
+    submitData() {
+        if(surveyModel.selectedData === null){
+            alert('항목을 선택해주세요.');
+        }else{
+            surveyService.submitSurvey(surveyModel.selectedData);
+        }
+    }
 }
 export default new surveyContentVm();

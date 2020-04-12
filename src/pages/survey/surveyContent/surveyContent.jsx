@@ -21,6 +21,9 @@ class surveyContent extends Component {
     goBack() {
         this.props.history.goBack();
     }
+    goNext() {
+        surveyContentVm.submitData();
+    }
     render() {
         let surveyTypeContent;
         if(surveyContentVm.question.type === "SCORE_7") {
@@ -46,7 +49,7 @@ class surveyContent extends Component {
                         </Content>
                     </div>
                     <div className={style.btnArea}>
-                         <MiddleButton width="49%" whiteType={true} onClick={() => this.goBack()}>이전</MiddleButton><MiddleButton width="49%">다음</MiddleButton>
+                         <MiddleButton width="49%" whiteType={true} onClick={() => this.goBack()}>이전</MiddleButton><MiddleButton width="49%" onClick={() => this.goNext()}>다음</MiddleButton>
                     </div>
                 </ContentBox>
             </div>

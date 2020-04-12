@@ -12,18 +12,18 @@
         border-radius: 50%;
         display: inline-block;
         cursor: pointer;
-        &:hover{
+        &:hover, &.selected{
             background-color: #9b9faa;
         }
         &:nth-child(2), &:nth-child(3), &:nth-child(4) {
             border-color: #ff6f61;
-            &:hover{
+            &:hover, &.selected{
                 background-color: #ff6f61;
             }
         }
         &:nth-child(6), &:nth-child(7), &:nth-child(8) {
             border-color: #5f394d;
-            &:hover{
+            &:hover, &.selected{
                 background-color: #5f394d;
             }
         }
