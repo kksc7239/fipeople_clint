@@ -1,5 +1,5 @@
 import { observable, action } from 'mobx';
-import surveyModel from '../../../../model/surveyModel';
+import surveyModel from '../../../../../model/surveyModel';
 
 class scoreTypeVm {
     get itemData() {

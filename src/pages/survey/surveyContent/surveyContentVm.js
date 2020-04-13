@@ -10,7 +10,7 @@ class surveyContentVm {
         const maxLength = qList.length;
         let checkLength = 0; 
         qList.forEach((item) => {
-            if(item.isfinish === true) checkLength ++;
+            if(item.isFinish === true) checkLength ++;
         })
         return parseInt((checkLength/maxLength) * 100);
     }

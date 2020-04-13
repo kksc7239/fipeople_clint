@@ -6,7 +6,8 @@ import surveyContentVm from './surveyContentVm';
 import './radialProgress.scss';
 import { observer } from 'mobx-react';
 import Content from '../../../commonComponent/contentBox/content';
-import ScoreType from './surveyType/scoreType';
+import ScoreType from './surveyType/scoreType/scoreType';
+import SelectSingle from './surveyType/selectSingle/selectSingle';
 import MiddleButton from '../../../commonComponent/button/middleButton';
 import { withRouter } from "react-router";
 
@@ -28,6 +29,8 @@ class surveyContent extends Component {
         let surveyTypeContent;
         if(surveyContentVm.question.type === "SCORE_7") {
             surveyTypeContent = <ScoreType/>
+        }else if(surveyContentVm.question.type === "SELECT_SINGLE") {
+            surveyTypeContent = <SelectSingle/>
         }
         return (
             <div className={style.surveyContent}>
