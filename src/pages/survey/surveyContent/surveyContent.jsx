@@ -8,6 +8,7 @@ import { observer } from 'mobx-react';
 import Content from '../../../commonComponent/contentBox/content';
 import ScoreType from './surveyType/scoreType/scoreType';
 import SelectSingle from './surveyType/selectSingle/selectSingle';
+import SelectMutiple from './surveyType/selectMutiple/selectMutiple';
 import MiddleButton from '../../../commonComponent/button/middleButton';
 import { withRouter } from "react-router";
 
@@ -31,6 +32,8 @@ class surveyContent extends Component {
             surveyTypeContent = <ScoreType/>
         }else if(surveyContentVm.question.type === "SELECT_SINGLE") {
             surveyTypeContent = <SelectSingle/>
+        }else if(surveyContentVm.question.type === "SELECT_MULTIPLE") {
+            surveyTypeContent = <SelectMutiple/>
         }
         return (
             <div className={style.surveyContent}>

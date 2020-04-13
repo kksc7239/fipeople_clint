@@ -1,0 +1,31 @@
+.checkbox{
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 500;
+    color: #272727;
+    input{
+        opacity: 0;
+        position: absolute;
+        width: 0;
+        height: 0;
+        &:checked+.label{
+            &:before{
+                background: url(/img/checked.png) center no-repeat;
+            }    
+        }
+    }
+    .label{
+        &:before{
+            position: relative;
+            top: 2px;
+            margin-right: 10px;
+            box-sizing: border-box;
+            width: 16px;
+            height: 16px;
+            border: none;
+            content: '';
+            display: inline-block;
+            background: url(/img/unchecked.png) center no-repeat;
+        }
+    }
+}
