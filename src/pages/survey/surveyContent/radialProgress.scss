@@ -1,10 +1,10 @@
 @for $i from 0 through 100 {
     .radialProgress-#{$i} {
         @if $i <= 50 {
-            background: linear-gradient(90deg - ($i * 3.6), #eee 50%, transparent 50%), linear-gradient(90deg, #ff6f61 50%, #eee 50%);
+            background: linear-gradient(90deg - ($i * 3.6), #ff6f61 50%, transparent 50%), linear-gradient(90deg, #eee 50%, #ff6f61 50%);
         }
         @else {
-            background: linear-gradient(90deg, #ff6f61 50%, transparent 50%), linear-gradient(90deg - ($i * 3.6 - 180), #ff6f61 50%, #eee 50%);
+            background: linear-gradient(90deg, #eee 50%, transparent 50%), linear-gradient(90deg - ($i * 3.6 - 180), #eee 50%, #ff6f61 50%);
         }
     }
 }

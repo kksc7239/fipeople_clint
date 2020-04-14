@@ -46,7 +46,7 @@ class surveyContent extends Component {
                 <ContentBox>
                     <MainTitleH1 fontSize="36px">친구 찾기</MainTitleH1>
                     <div className={style.surveyHead}>
-                        <div className={[style.faceGraph, `radialProgress-${surveyContentVm.questionProgress}`].join(' ')}>
+                        <div className={[style.faceGraph, `radialProgress-${100 - surveyContentVm.questionProgress}`].join(' ')}>
                             <div className={style.faceGraphInner}></div>
                         </div>
                         <div className={style.bubbleWrap}>
