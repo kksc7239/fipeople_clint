@@ -61,7 +61,8 @@ class surveyContent extends Component {
                         </Content>
                     </div>
                     <div className={style.btnArea}>
-                         <MiddleButton width="49%" whiteType={true} onClick={() => this.goBack()}>이전</MiddleButton><MiddleButton width="49%" onClick={() => this.goNext()}>다음</MiddleButton>
+                         {/* <MiddleButton width="49%" whiteType={true} onClick={() => this.goBack()}>이전</MiddleButton><MiddleButton width="49%" onClick={() => this.goNext()}>다음</MiddleButton> */}
+                         <MiddleButton width="100%" onClick={() => this.goNext()}>다음</MiddleButton>
                     </div>
                 </ContentBox>
             </div>
