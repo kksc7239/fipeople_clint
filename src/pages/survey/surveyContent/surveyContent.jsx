@@ -9,6 +9,7 @@ import Content from '../../../commonComponent/contentBox/content';
 import ScoreType from './surveyType/scoreType/scoreType';
 import SelectSingle from './surveyType/selectSingle/selectSingle';
 import SelectMutiple from './surveyType/selectMutiple/selectMutiple';
+import Depth from './surveyType/depth/depth';
 import MiddleButton from '../../../commonComponent/button/middleButton';
 import { withRouter } from "react-router";
 
@@ -34,6 +35,8 @@ class surveyContent extends Component {
             surveyTypeContent = <SelectSingle/>
         }else if(surveyContentVm.question.type === "SELECT_MULTIPLE") {
             surveyTypeContent = <SelectMutiple/>
+        }else if(surveyContentVm.question.type === "DEPTH") {
+            surveyTypeContent = <Depth/>
         }
         return (
             <div className={style.surveyContent}>

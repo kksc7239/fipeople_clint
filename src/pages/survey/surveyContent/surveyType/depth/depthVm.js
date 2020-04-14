@@ -1,7 +1,7 @@
 import { observable, action } from 'mobx';
 import surveyModel from '../../../../../model/surveyModel';
 
-class selectMultipleVm {
+class depthVm {
     get itemData() {
         return surveyModel.question.items;
     }
@@ -19,4 +19,4 @@ class selectMultipleVm {
         }
     }
 }
-export default new selectMultipleVm();
+export default new depthVm();

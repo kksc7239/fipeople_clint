@@ -24,5 +24,4 @@ class scoreType extends Component {
         );
     }
 }
-
 export default scoreType;

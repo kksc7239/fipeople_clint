@@ -1,9 +1,13 @@
-.selectMultiple{
+.depth{
     text-align: left;
     .row{
         margin-top: 27px;
         &:nth-child(1){
             margin-top: 0;
         }
+    }
+    .row2{
+        margin-top: 22px;
+        margin-left: 35px;
     }
 }
