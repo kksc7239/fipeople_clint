@@ -4,6 +4,7 @@ import './App.css';
 import Main from './pages/main/main';
 import Events from './pages/events/events';
 import Survey from './pages/survey/survey';
+import BuyTicket from './pages/buyTicket/buyTicket';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/events" component={Events} />
         <Route path="/survey/:surveyUserId" component={Survey} />
         <Route exact path="/" component={Main} />
+        <Route path="/ticket" component={BuyTicket} />
       </Router>
     </div>
   );
