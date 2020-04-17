@@ -1,0 +1,47 @@
+.wrapper{
+    height: 570px;
+    background-color: #fff;
+    .title{
+        padding-top: 80px;
+    }
+    .step{
+        display: flex;
+        max-width: 1240px;
+        justify-content: space-between;
+        margin: 0 auto;
+        .stepItem{
+            width: 330px;
+            margin-top: 55px;
+            .stepNumber{
+                font-size: 18px;
+                font-weight: 600;
+                color: #fff;
+                display: inline-block;
+                width: 36px;
+                height: 36px;
+                background-color: #ff6f61;
+                border-radius: 36px;
+                text-align: center;
+                box-sizing: border-box;
+                padding-top: 8px;
+            }
+            .stepImg{
+                margin-top: 34px;
+            }
+            .stepTitle{
+                font-size: 34px;
+                font-weight: 600;
+                margin-top: 46px;
+                line-height: 1.09;
+                color: #303030;
+            }
+            .stepContent{
+                color: #303030;
+                font-size: 24px;
+                font-weight: 500;
+                line-height: 1.5;
+                margin-top: 12px;
+            }
+        }
+    }
+}

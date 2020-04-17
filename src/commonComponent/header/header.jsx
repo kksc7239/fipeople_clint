@@ -55,7 +55,7 @@ class header extends Component {
                     <div>
                         <nav className={style.nav}>
                             <ul>
-                                <li><Link to='#'>이용방법</Link></li>
+                                <li><Link to='/information'>이용방법</Link></li>
                                 <li><Link to='/events'>친구찾기</Link></li>
                                 <li><Link to='/ticket'>티켓구매</Link></li>
                             </ul>

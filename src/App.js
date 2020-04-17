@@ -5,6 +5,7 @@ import Main from './pages/main/main';
 import Events from './pages/events/events';
 import Survey from './pages/survey/survey';
 import BuyTicket from './pages/buyTicket/buyTicket';
+import Information from './pages/information/information'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/survey/:surveyUserId" component={Survey} />
         <Route exact path="/" component={Main} />
         <Route path="/ticket" component={BuyTicket} />
+        <Route path="/information" component={Information} />
       </Router>
     </div>
   );
