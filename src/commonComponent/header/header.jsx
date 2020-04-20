@@ -6,6 +6,12 @@ import { observer } from 'mobx-react';
 
 @observer
 class header extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            mMenuOpen : false
+        }
+    }
     componentDidMount() {
         //로그인상태면 로컬스토리지에 저장되어있는것들을 상태에 반영한다
         if(localStorage.getItem('loginYn') === 'true') {
@@ -29,11 +35,21 @@ class header extends Component {
     logout() {
         headerVm.logout();
     }
+    changeOpen() {
+        this.setState({
+            mMenuOpen : this.state.mMenuOpen ? false : true
+        });
+    }
     render() {
         let memberNav;
         const headerStyle = [style.header];
+        const mHeaderStyle = [style.mHeader];
         if(this.props.headerBackGround === true) {
             headerStyle.push(style.backGroundHeader);
+            mHeaderStyle.push(style.backGroundHeader);
+        }
+        if(this.state.mMenuOpen === true) {
+            mHeaderStyle.push(style.open);
         }
         if(headerVm.loginData.loginYn) {//로그인 대있으면
             memberNav = 
@@ -49,19 +65,39 @@ class header extends Component {
             </nav>
         }
         return (
-            <header className={headerStyle.join(' ')}>
-                <div className={style.content}>
-                    <div className={style.logo}><Link to='/'><img src="/img/logo.png" alt="logo" title="logo"/></Link></div>
-                    <div>
-                        <nav className={style.nav}>
-                            <ul>
-                                <li><Link to='/information'>이용방법</Link></li>
-                                <li><Link to='/events'>친구찾기</Link></li>
-                                <li><Link to='/ticket'>티켓구매</Link></li>
-                            </ul>
-                        </nav>
-                        {memberNav}
+            <header>
+                <div className={headerStyle.join(' ')}>
+                    <div className={style.content}>
+                        <div className={style.logo}><Link to='/'><img src="/img/logo.png" alt="logo" title="logo"/></Link></div>
+                        <div>
+                            <nav className={style.nav}>
+                                <ul>
+                                    <li><Link to='/information'>이용방법</Link></li>
+                                    <li><Link to='/events'>친구찾기</Link></li>
+                                    <li><Link to='/ticket'>티켓구매</Link></li>
+                                </ul>
+                            </nav>
+                            {memberNav}
+                        </div>
                     </div>
+                </div>
+                <div className={mHeaderStyle.join(' ')}>
+                    <div className={style.content}>
+                        <div className={style.logo}><Link to='/'><img src="/img/logo.png" alt="logo" title="logo"/></Link></div>
+                        <div className={style.hamMenu} onClick={() => this.changeOpen()}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <nav className={style.nav}>
+                        <div>{memberNav}</div>
+                        <ul>
+                            <li><Link to='/information'>이용방법</Link></li>
+                            <li><Link to='/events'>친구찾기</Link></li>
+                            <li><Link to='/ticket'>티켓구매</Link></li>
+                        </ul>
+                    </nav>
                 </div>
             </header>
         );
