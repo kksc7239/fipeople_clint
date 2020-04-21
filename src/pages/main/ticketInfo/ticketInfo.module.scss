@@ -21,3 +21,27 @@
         margin-top: 66px;
     }
 }
+@media (max-width:780px){
+    .wrapper{
+        height: 700px;
+        .title{
+            font-size: 28px;
+            width: 240px;
+            margin: 0 auto;
+            line-height: 1.43;
+        }
+        .subTitle{
+            margin-top: 35px;
+        }
+        .ticketInfo{
+            font-size: 18px;
+            margin-top: 19px;
+        }
+        .image{
+            margin-top: 49px;
+            img{
+                width: calc(100% - 90px);
+            }
+        }
+    }
+}

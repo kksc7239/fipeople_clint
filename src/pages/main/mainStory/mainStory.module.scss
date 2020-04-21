@@ -3,13 +3,12 @@
     background-color: #fff;
     .storyContent{
         max-width: 1240px;
+        padding: 30px 20px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
         height: 100%;
         justify-content: space-evenly;
-        padding: 30px 0;
-        box-sizing: border-box;
         .storyBox{
             margin-top: 120px;
             text-align: left;
@@ -46,6 +45,51 @@
             }
             &:nth-child(5) {
                 background: url(/img/mainStory5.png) no-repeat 85% 30px;
+            }
+        }
+    }
+}
+@media (max-width:780px){
+    .mainStory{
+        height: auto;
+        .storyContent{
+            .storyBox{
+                margin-top: 80px;
+                display: block;
+                flex: none;
+                .title{
+                    font-size: 24px;
+                }
+                .content{
+                    font-size: 14px;
+                    margin-top: 15px;
+                    line-height: 1.86;
+                }
+                &:nth-child(1) {
+                    background: url(/img/mainStory1.png) no-repeat right bottom;
+                    background-size: 210px;
+                    height: 340px;
+                }
+                &:nth-child(2) {
+                    background: url(/img/mainStory2.png) no-repeat left 9px;
+                    background-size: 90px;
+                    height: 170px;
+                }
+                &:nth-child(3) {
+                    background: url(/img/mainStory3.png) no-repeat right bottom;
+                    background-size: 165px;
+                    height: 265px;
+                }
+                &:nth-child(4) {
+                    background: url(/img/mainStory4.png) no-repeat left bottom;
+                    background-size: 114px;
+                    height: 245px;
+                }
+                &:nth-child(5) {
+                    background: url(/img/mainStory5.png) no-repeat center bottom;
+                    background-size: 159px;
+                    height: 305px;
+                }
             }
         }
     }

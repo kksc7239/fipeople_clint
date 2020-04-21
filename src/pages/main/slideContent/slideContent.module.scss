@@ -56,3 +56,24 @@
         }
     }
 }
+@media (max-width:780px){
+    .wrapper{
+        height : 540px;
+        .slideBox{
+            .slideItem{
+                margin-top: 42px;
+                .slideContent{
+                    font-size: 26px;
+                }
+                .slideWriter{
+                    font-size: 14px;
+                }
+            }
+            .slideItemImg{
+                img{
+                    width: 60px;
+                }
+            }
+        }
+    }
+}

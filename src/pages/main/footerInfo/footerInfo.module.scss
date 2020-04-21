@@ -17,3 +17,11 @@
         margin-top: 40px;
     }
 }
+@media (max-width:780px){
+    .wrapper{
+        height: 300px;
+        .text{
+            font-size: 34px;
+        }
+    }
+}

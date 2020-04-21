@@ -69,3 +69,12 @@
     10% { transform: translateY(0); opacity: 1; }
     100% { transform: translateY(15px); opacity: 0;}
 }
+@media (max-width:780px){
+    .subMessage{
+        font-size: 16px !important;
+    }
+    .mainMessage{
+        font-size: 30px !important;
+        min-height: 80px !important;
+    }
+}
