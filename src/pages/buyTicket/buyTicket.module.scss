@@ -7,6 +7,7 @@
     margin-top: 80px;
     .content{
         max-width: 1240px;
+        padding: 0 20px;
         margin: 0 auto;
         text-align: left;
         .sTitle{
@@ -28,6 +29,7 @@
 .contentBox{
     margin-top: 60px;
     margin-bottom: 100px;
+    padding: 0 20px;
     .title{
         color: #171717;
         font-size: 20px;
@@ -111,6 +113,42 @@
                     position: relative;
                     top: 4px;
                 }
+            }
+        }
+    }
+}
+@media (max-width:780px){
+    .topInfo{
+        margin-top: 65px;
+        height: 150px;
+        .content{
+            .sTitle{
+                font-size: 14px;
+                padding-top: 34px;
+            }
+            .title{
+                font-size: 26px;
+            }
+        }
+    }
+    .contentBox{
+        .countWrapper{
+            span{
+                font-size: 16px;
+            }
+        }
+        margin-top: 30px;
+        .price{
+            font-size: 30px;
+        }
+        .subInfo{
+            font-size: 13px;
+        }
+        .btnArea{
+            button{
+                width: calc(50% - 8px);
+                height: 50px;
+                font-size: 16px;
             }
         }
     }
