@@ -33,7 +33,7 @@ class eventContents extends Component {
             }
             eventItem.push(
                 <div className={style.eventItem} key={index}>
-                    <img src={item.thumbnailImg.publicPath}></img>
+                    <img src={process.env.REACT_APP_API_URL + item.thumbnailImg.publicPath}></img>
                     <div className={style.eventInfo}>
                         <div className={style.title}>{item.description}</div>
                         <div className={style.price}>00,000원</div>
