@@ -12,6 +12,10 @@ class eventService {
         if(localStorage.getItem('accessToken') ) {
             post(`/api/survey/${eventId}/start`, {}, {token: true}).then(response => {
                 link(`/survey/${response.data.surveyUserId}`);
+            }).catch(function (err) {
+                if (err.response.data.message === 'SURVEY_IS_ALREADY_EXIST') {
+                    link(`/survey/${err.response.data.data.surveyUserId}`);
+                }
             });
         }else{
             alert('로그인이 필요합니다.');

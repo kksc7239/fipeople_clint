@@ -37,6 +37,8 @@ function post(url, body, option) {
                     localStorage.setItem("accessToken", res.data.accessToken);
                     resolve(post(url, body, option));
                 })
+            } else {
+                reject(error);
             }
         })
     })

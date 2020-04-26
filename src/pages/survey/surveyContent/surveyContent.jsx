@@ -12,7 +12,7 @@ import SelectMutiple from './surveyType/selectMutiple/selectMutiple';
 import Depth from './surveyType/depth/depth';
 import TextInp from './surveyType/textInp/textInp';
 import MiddleButton from '../../../commonComponent/button/middleButton';
-import { withRouter } from "react-router";
+import { withRouter } from 'react-router';
 
 @observer
 class surveyContent extends Component {

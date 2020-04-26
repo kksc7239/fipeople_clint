@@ -8,7 +8,7 @@ import EventButton from '../../../commonComponent/button/eventButton';
 import eventContentsVm from '../eventContents/eventContentsVm';
 import { observer } from 'mobx-react';
 import GetDate from '../../../common/getDate';
-import { withRouter } from "react-router";
+import { withRouter } from 'react-router';
 
 @observer
 class eventContents extends Component {
