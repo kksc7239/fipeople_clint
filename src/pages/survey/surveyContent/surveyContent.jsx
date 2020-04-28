@@ -54,6 +54,11 @@ class surveyContent extends Component {
                                 {surveyContentVm.question.text}
                             </div>
                         </div>
+                        <div className={style.mbubbleWrap}>
+                            <div className={style.bubble}>
+                                {surveyContentVm.question.text}
+                            </div>
+                        </div>
                     </div>
                     <div className={style.surveyBody}>
                         <Content>

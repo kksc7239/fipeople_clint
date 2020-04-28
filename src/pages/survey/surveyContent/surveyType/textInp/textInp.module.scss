@@ -7,3 +7,11 @@
     font-weight: 500;
     line-height: 1.2;
 }
+@media (max-width:780px) {
+    .textarea{
+        width: 100%;
+        height: 150px;
+        border: none;
+        font-size: 15px;
+    }
+}

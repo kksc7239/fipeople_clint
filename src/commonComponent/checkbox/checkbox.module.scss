@@ -1,4 +1,6 @@
 .checkbox{
+    display: inline-block;
+    position: relative;
     cursor: pointer;
     font-size: 17px;
     font-weight: 500;
@@ -14,7 +16,15 @@
             }    
         }
     }
+    
+    .text{
+        padding-left: 25px;
+        display: inline-block;
+    }
     .label{
+        position: absolute;
+        top: 0;
+        left: 0;
         &:before{
             position: relative;
             top: 2px;
@@ -27,5 +37,11 @@
             display: inline-block;
             background: url(/img/unchecked.png) center no-repeat;
         }
+    }
+}
+@media (max-width:780px) {
+    .checkbox{
+        font-size: 15px;
+        line-height: 1.2;
     }
 }
