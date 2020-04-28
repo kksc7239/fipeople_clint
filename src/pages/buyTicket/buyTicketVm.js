@@ -14,7 +14,7 @@ class BuyTicketVm {
             name: memberModel.memberData.name,
             email: memberModel.memberData.email,
         }
-    }
+}
 
     loadTickets() {
         ticketService.loadTickets()

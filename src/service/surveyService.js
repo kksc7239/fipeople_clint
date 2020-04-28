@@ -8,6 +8,10 @@ class surveyService {
             surveyModel.question = response.data.question;
             surveyModel.surveyUserId = surveyUserId;
             surveyModel.selectedData = null;
+            surveyModel.resultDate = response.data.survey.resultDate;
+            if(surveyModel.questionStateList[surveyModel.questionStateList.length - 1].isFinish === true) {
+                surveyModel.surveyEndYn = true;
+            }
             console.log(response.data);
         });
     }
