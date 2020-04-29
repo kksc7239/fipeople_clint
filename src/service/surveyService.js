@@ -12,7 +12,6 @@ class surveyService {
             if(surveyModel.questionStateList[surveyModel.questionStateList.length - 1].isFinish === true) {
                 surveyModel.surveyEndYn = true;
             }
-            console.log(response.data);
         });
     }
     submitSurvey(param) {
@@ -20,8 +19,8 @@ class surveyService {
             this.setSurvey(surveyModel.surveyUserId);
         });
     }
-    surveyEnd(eventId, link) {
-        post(`/api/survey/${eventId}/submit`, {}, {token: true}).then(response => {
+    surveyEnd(surveyUserId, link) {
+        post(`/api/survey-user/${surveyUserId}/submit`, {}, {token: true}).then(response => {
             link(`/events`);
         });
     }

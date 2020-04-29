@@ -25,10 +25,14 @@ class eventContents extends Component {
             let infoTxt;
             if(item.openstatus === 0) { //진행중
                 infoTxt = <span>진행기간 : {GetDate.getDate(new Date(item.openDate))}<span className={style.space}></span> 발표일 : {GetDate.getDate(new Date(item.closeDate))}</span>
-                if(item.itemCnt === item.progressitemcnt) {
-                    evBtn = <EventButton width="100%" onClick={() => this.goToSurvey(item.surveyUserId, item.id)}>설문을 완료했습니다. 파이를 사용해주세요!</EventButton>;
+                if(item.surveyUserStatus === 1) {
+                    evBtn = <EventButton width="100%" disabled={true}>잘 맞는 친구를 찾고 있습니다!</EventButton>
                 }else{
-                    evBtn = <EventButton width="100%" onClick={() => this.goToSurvey(item.surveyUserId, item.id)}>설문하러가기</EventButton>;
+                    if(item.itemCnt === item.progressitemcnt) {
+                        evBtn = <EventButton width="100%" onClick={() => this.goToSurvey(item.surveyUserId, item.id)}>설문을 완료했습니다. 파이를 사용해주세요!</EventButton>;
+                    }else{
+                        evBtn = <EventButton width="100%" onClick={() => this.goToSurvey(item.surveyUserId, item.id)}>설문하러가기</EventButton>;
+                    }
                 }
             }
             if(item.openstatus === 1) { //진행전
