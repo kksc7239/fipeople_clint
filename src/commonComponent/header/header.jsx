@@ -74,7 +74,7 @@ class header extends Component {
                                 <ul>
                                     <li><Link to='/information'>이용방법</Link></li>
                                     <li><Link to='/events'>친구찾기</Link></li>
-                                    <li><Link to='/ticket'>티켓구매</Link></li>
+                                    <li><Link to='/ticket/ticket'>티켓구매</Link></li>
                                 </ul>
                             </nav>
                             {memberNav}
@@ -95,7 +95,7 @@ class header extends Component {
                         <ul>
                             <li><Link to='/information'>이용방법</Link></li>
                             <li><Link to='/events'>친구찾기</Link></li>
-                            <li><Link to='/ticket'>티켓구매</Link></li>
+                            <li><Link to='/ticket/ticket'>티켓구매</Link></li>
                         </ul>
                     </nav>
                 </div>

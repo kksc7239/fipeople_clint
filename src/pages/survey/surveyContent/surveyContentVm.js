@@ -29,13 +29,17 @@ class surveyContentVm {
     loadTickets() {
         ticketService.loadTickets();
     }
-    submitData() {
+    submitData(link) {
         if(surveyModel.surveyEndYn === true) { //질문끝남
             if(ticketModel.tickets) {
                 if(ticketModel.tickets.length === 0) {
                     alert('파이가 없습니다. 파이를 구매해보세요!'); //구매링크로 이동
+                    link(`/ticket/${surveyModel.surveyUserId}`);
                 }else {
                     //제출 실행
+                    if(confirm("파이를 사용하시겠습니까?")) {
+                        surveyService.surveyEnd(surveyModel.surveyUserId,link);
+                    }
                 }
             }
         }else{ //다음질문으로 넘어감

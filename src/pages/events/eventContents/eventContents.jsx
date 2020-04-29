@@ -22,13 +22,21 @@ class eventContents extends Component {
         let eventItem = [];
         eventContentsVm.getEventDataList.forEach((item, index) => {
             let evBtn;
+            let infoTxt;
             if(item.openstatus === 0) { //진행중
-                evBtn = <EventButton width="100%" onClick={() => this.goToSurvey(item.surveyUserId, item.id)}>진행기간 : {GetDate.getDate(new Date(item.openDate))}<span className={style.space}></span> 발표일 : {GetDate.getDate(new Date(item.closeDate))}</EventButton>;
+                infoTxt = <span>진행기간 : {GetDate.getDate(new Date(item.openDate))}<span className={style.space}></span> 발표일 : {GetDate.getDate(new Date(item.closeDate))}</span>
+                if(item.itemCnt === item.progressitemcnt) {
+                    evBtn = <EventButton width="100%" onClick={() => this.goToSurvey(item.surveyUserId, item.id)}>설문을 완료했습니다. 파이를 사용해주세요!</EventButton>;
+                }else{
+                    evBtn = <EventButton width="100%" onClick={() => this.goToSurvey(item.surveyUserId, item.id)}>설문하러가기</EventButton>;
+                }
             }
             if(item.openstatus === 1) { //진행전
-                evBtn = <EventButton width="100%" disabled={true}>{GetDate.getDate(new Date(item.openDate))} 진행예정</EventButton>
+                infoTxt = <span>{GetDate.getDate(new Date(item.openDate))} 진행예정입니다.</span>
+                evBtn = <EventButton width="100%" disabled={true}>진행예정</EventButton>
             }
             if(item.openstatus === 2) {// 마감
+                infoTxt = <span>{GetDate.getDate(new Date(item.openDate))} 다른행사에 참여해주세요</span>
                 evBtn = <EventButton width="100%" disabled={true} useYn={false}>본 행사는 마감되었습니다!</EventButton>
             }
             eventItem.push(
@@ -36,7 +44,7 @@ class eventContents extends Component {
                     <img src={process.env.REACT_APP_API_URL + item.thumbnailImg.publicPath}></img>
                     <div className={style.eventInfo}>
                         <div className={style.title}>{item.description}</div>
-                        <div className={style.price}>00,000원</div>
+                        <div className={style.price}>{infoTxt}</div>
                         <div className={style.btnArea}>
                             {evBtn}
                         </div>

@@ -95,7 +95,11 @@ class buyTicket extends Component {
             msg += '에러내용 : ' + data.error_msg;
             alert(msg)
         }
-        this.props.history.replace('/ticket');
+        if(this.props.match.params.redirectUrl === 'ticket') {
+            this.props.history.replace('/ticket/ticket');
+        }else{
+            this.props.history.replace(`/survey/${this.props.match.params.redirectUrl}`);
+        }
     }
 
     render() {

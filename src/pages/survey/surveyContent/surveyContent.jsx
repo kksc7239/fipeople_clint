@@ -26,7 +26,7 @@ class surveyContent extends Component {
         this.props.history.goBack();
     }
     goNext() {
-        surveyContentVm.submitData();
+        surveyContentVm.submitData(this.props.history.push);
     }
     render() {
         let surveyTypeContent;
@@ -46,7 +46,7 @@ class surveyContent extends Component {
             }
         }else{
             surveyContentVm.loadTickets();
-            btnText = '매칭 시작하기';
+            btnText = '파이티켓 사용하기';
             questionTxt = <span>매칭을 위한 설문을 완료했습니다.<br/> 파이를 사용하여<br/> 나와 잘 맞는 친구를 찾아보세요!</span>;
             surveyTypeContent = <span style={{lineHeight:'1.2'}}>파이를 사용해 매칭을 시작하면<br/><span style={{color:'#ff6f61'}}>{surveyContentVm.resultDate}</span>에 서로에게 매칭과 함께 질문지가 발송됩니다.</span>;
         }

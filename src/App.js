@@ -14,7 +14,7 @@ function App() {
         <Route path="/events" component={Events} />
         <Route path="/survey/:surveyUserId" component={Survey} />
         <Route exact path="/" component={Main} />
-        <Route path="/ticket" component={BuyTicket} />
+        <Route path="/ticket/:redirectUrl" component={BuyTicket} />
         <Route path="/information" component={Information} />
       </Router>
     </div>

@@ -6,6 +6,7 @@ class eventService {
     getEventData(data) {
         get('/api/survey', {}, {token: loginModel.loginData.loginYn}).then(response => {
             eventModel.eventDataList = response.data;
+            console.log(response.data);
         });
     }
     surveyStart(eventId, link) {
@@ -20,7 +21,6 @@ class eventService {
         }else{
             alert('로그인이 필요합니다.');
         }
-        
     }
 }
 export default new eventService();

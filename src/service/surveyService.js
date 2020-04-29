@@ -20,5 +20,10 @@ class surveyService {
             this.setSurvey(surveyModel.surveyUserId);
         });
     }
+    surveyEnd(eventId, link) {
+        post(`/api/survey/${eventId}/submit`, {}, {token: true}).then(response => {
+            link(`/events`);
+        });
+    }
 }
 export default new surveyService();
