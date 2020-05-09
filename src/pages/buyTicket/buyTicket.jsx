@@ -126,7 +126,7 @@ class buyTicket extends Component {
                         <div className={style.subInfo}>* 파이 1개는 서비스 1번 입니다.</div>
                         <div className={style.price}>{this.price}원</div>
                         <div className={style.btnArea}>
-                            <button type="button">kakao 공유</button>
+                            <button type="button">공유</button>
                             {buyTicketVm.tickets && (buyTicketVm.tickets.length ? (
                                 <button type="button" disabled>티켓 보유중</button>
                             ) : (
