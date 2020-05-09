@@ -58,12 +58,19 @@
 }
 @media (max-width:780px){
     .wrapper{
-        height : 540px;
+        height : 400px;
+        .title{
+            padding-top: 60px;
+        }
         .slideBox{
             .slideItem{
+                width: 100%;
+                padding: 0 20px;
+                box-sizing: border-box;
                 margin-top: 42px;
                 .slideContent{
-                    font-size: 26px;
+                    width: 100%;
+                    font-size: 21px;
                 }
                 .slideWriter{
                     font-size: 14px;
