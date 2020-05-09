@@ -1,11 +1,13 @@
 .footer{
     background-color: rgba($color: #252c2e, $alpha: 1);
     padding-bottom: 20px;
-    padding-top: 10px;
+    padding-top: 20px;
     .footerIn{
         margin: 0 auto;
         .simbol{
             width: 45px;
+            vertical-align: initial;
+            margin-bottom: 2px;
         }
         .footerText{
             text-align: left;
@@ -14,21 +16,26 @@
             font-weight: 100;
             display: inline-block;
             line-height: 1.4;
-            position: relative;
-            top: 13px;
             margin-left: 20px;
+            a{
+                color: rgba($color: #ffffff, $alpha: 0.4);
+            }
         }
     }
 }
 @media (max-width:780px){
     .footer{
-        padding-top: 3px;
+        padding-top: 15px;
         .footerIn{
             .simbol{
+                padding-bottom: 10px;
                 width: 25px;
+                margin: 0 auto;
+                display: block;
             }
             .footerText{
                 font-size: 10px;
+                margin-left: 0;
             }
         }
     }
