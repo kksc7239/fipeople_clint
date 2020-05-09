@@ -47,7 +47,7 @@ class eventContents extends Component {
                 <div className={style.eventItem} key={index}>
                     <img src={process.env.REACT_APP_API_URL + item.thumbnailImg.publicPath}></img>
                     <div className={style.eventInfo}>
-                        <div className={style.title}>{item.description}</div>
+                        <div className={style.title}>{item.name}</div>
                         <div className={style.price}>{infoTxt}</div>
                         <div className={style.btnArea}>
                             {evBtn}
