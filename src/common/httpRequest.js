@@ -18,7 +18,23 @@ function get(url, body, option) {
                 httpRequest.post('/api/auth/refresh-token', {refreshToken : localStorage.getItem('refreshToken')}, {headers: requestOption}).then((res) => {
                     localStorage.setItem("accessToken", res.data.accessToken);
                     resolve(get(url, body, option));
+                }).catch((error) => {
+                    if(error.response.data.message === 'REFRESH_TOO_LATE') {
+                        localStorage.removeItem('loginYn');
+                        localStorage.removeItem('accessToken');
+                        localStorage.removeItem('refreshToken');
+                        localStorage.removeItem('name');
+                        localStorage.removeItem('email');
+                        localStorage.removeItem('image');
+                        location.replace('/');
+                    }else {
+                        reject(error);
+                    }
                 })
+            }else if(error.response.data.message === 'ACCESS_TOKEN_INVALID') {
+                alert('로그인이 필요합니다.');
+            }else {
+                reject(error);
             }
         })
     })
@@ -45,11 +61,13 @@ function post(url, body, option) {
                         localStorage.removeItem('email');
                         localStorage.removeItem('image');
                         location.replace('/');
-                    } else {
+                    }else {
                         reject(error);
                     }
                 })
-            } else {
+            }else if(error.response.data.message === 'ACCESS_TOKEN_INVALID') {
+                alert('로그인이 필요합니다.');
+            }else {
                 reject(error);
             }
         })
