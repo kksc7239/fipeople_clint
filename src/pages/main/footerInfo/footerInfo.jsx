@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import style from './footerInfo.module.scss';
 import RoundButton from '../../../commonComponent/button/roundButton';
 
-class footerInfo extends Component {
+class footerInfo extends PureComponent {
     render() {
         return (
             <div className={style.wrapper}>

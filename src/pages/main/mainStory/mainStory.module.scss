@@ -24,12 +24,18 @@
                 font-size: 40px;
                 font-weight: 600;
             }
-            .content{
+            .content, .mContent{
                 color: #171717;
                 margin-top: 39px;
                 font-size: 22px;
                 line-height: 1.64;
                 font-weight: 400;
+            }
+            .mContent{
+                font-size: 14px;
+                margin-top: 15px;
+                line-height: 1.86;
+                display: none;
             }
             &:nth-child(1) {
                 background: url(/img/mainStory1.png) no-repeat 88% 60px;
@@ -60,10 +66,11 @@
                 .title{
                     font-size: 24px;
                 }
+                .mContent{
+                    display: block;
+                }
                 .content{
-                    font-size: 14px;
-                    margin-top: 15px;
-                    line-height: 1.86;
+                    display: none;
                 }
                 &:nth-child(1) {
                     background: url(/img/mainStory1.png) no-repeat right bottom;
@@ -78,12 +85,13 @@
                 &:nth-child(3) {
                     background: url(/img/mainStory3.png) no-repeat right bottom;
                     background-size: 165px;
-                    height: 265px;
+                    height: 280px;
                 }
                 &:nth-child(4) {
-                    background: url(/img/mainStory4.png) no-repeat left bottom;
+                    padding-top: 25px;
+                    background: url(/img/mainStory4.png) no-repeat -20px top;
                     background-size: 114px;
-                    height: 245px;
+                    height: 205px;
                 }
                 &:nth-child(5) {
                     background: url(/img/mainStory5.png) no-repeat center bottom;

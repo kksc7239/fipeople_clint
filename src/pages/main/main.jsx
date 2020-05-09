@@ -26,14 +26,19 @@ class main extends Component {
         }.bind(this));
     }
     onScroll() {
-        if(window.scrollY > 80){
-            this.setState({
-                headerBackGround : true
-            })
-        }else{
-            this.setState({
-                headerBackGround : false
-            })
+        if(window.scrollY > 80) {
+            if(!this.state.headerBackGround) {
+                this.setState({
+                    headerBackGround : true
+                })
+            }
+            
+        }else  {
+            if (this.state.headerBackGround) {
+                this.setState({
+                    headerBackGround : false
+                })
+            } 
         };
     }
     render() {

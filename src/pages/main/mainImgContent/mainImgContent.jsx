@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import style from './mainImgContent.module.scss';
 import RoundButton from '../../../commonComponent/button/roundButton';
 import Typist from 'react-typist';
 
-class mainImgContent extends Component {
+class mainImgContent extends PureComponent {
     state = {
         TypistFinishYn : false
     }
@@ -18,13 +18,15 @@ class mainImgContent extends Component {
                 })
             }, 1000);
         }, 4700);
+
     }
     moveBottom() {
         window.scrollTo(0, window.innerHeight-80);
     }
     render() {
+        console.log('aaa');
         return (
-            <div className={style.mainImgContent} id="mainImgContent">
+            <div className={style.mainImgContent} id="mainImgContent" style={{height:window.innerHeight+'px'}}>
                 <div className={style.content}>
                     <div className={style.subMessage}><Typist><Typist.Delay ms={3000} />나와 “공통점” 있는 친구를 만나보세요!</Typist></div>
                     <div className={style.mainMessage}><Typist><Typist.Delay ms={700} />나와 “잘 맞는” 친구만들기가<br/>힘들고 까다로우신가요?</Typist></div>

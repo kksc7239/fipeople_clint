@@ -1,14 +1,14 @@
 .mainImgContent{
     width: 100%;
-    height: 100vh;
     background-image: url(/img/mainImg.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    min-height:900px;
     .content{
-        padding-top: 32vh;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
         color: #fff;
         .subMessage{
             font-size: 30px;
@@ -74,7 +74,7 @@
         font-size: 16px !important;
     }
     .mainMessage{
-        font-size: 30px !important;
+        font-size: 27px !important;
         min-height: 80px !important;
     }
 }

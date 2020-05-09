@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import style from './footer.module.scss';
-class footer extends Component {
+class footer extends PureComponent {
     render() {
         return (
             <footer className={style.footer}>

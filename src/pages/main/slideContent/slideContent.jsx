@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import style from './slideContent.module.scss';
 import UnderlineText from '../../../commonComponent/text/underlineText';
 
-class slideContent extends Component {
+class slideContent extends PureComponent {
     state = {
         slideNow : 0
     }
