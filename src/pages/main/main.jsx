@@ -52,6 +52,7 @@ class main extends Component {
                 <TicketInfo></TicketInfo>
                 <FooterInfo></FooterInfo>
                 <Footer></Footer>
+                <a href="https://pf.kakao.com/_xbxlrfxb/friend" target="_blank" style={{position:'fixed', bottom:'10px', right:'10px'}}><img src="/img/kakaoConsulting.png" style={{width:'100px'}}></img></a>
             </Fragment>
         );
     }
