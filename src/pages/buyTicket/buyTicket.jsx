@@ -28,7 +28,7 @@ class buyTicket extends Component {
     }
 
     get price() {
-        const price = 20000;
+        const price = 8400;
         const x = this.state.ticketCount * price;
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
@@ -129,7 +129,8 @@ class buyTicket extends Component {
                             {/*<button type="button" className={style.pBtn} onClick={() => this.changeCount('plus')}></button>*/}
                         </div>
                         <div className={style.subInfo}>* 파이 1개는 서비스 1번 입니다.</div>
-                        <div className={style.price}>{this.price}원</div>
+                        <div className={style.beforePrice}><span>12,000원</span></div>
+                        <div className={style.price}>8,400원</div>
                         <div className={style.btnArea}>
                             <button type="button" onClick={() => this.shareSite()}>kakao 공유</button>
                             {buyTicketVm.tickets && (buyTicketVm.tickets.length ? (

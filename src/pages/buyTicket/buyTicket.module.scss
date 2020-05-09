@@ -82,11 +82,29 @@
         font-weight: 500;
         margin-top: 24px;
     }
+    .beforePrice{
+        margin-top: 18px;
+        span{
+            position: relative;
+            opacity: 0.5;
+            font-size: 17px;
+            &:before{
+                content: '';
+                display: inline-block;
+                position: absolute;
+                height: 1px;
+                background: #575757;
+                left: 0;
+                right: 0;
+                transform: rotate(4deg);
+                top: 12px;
+            }
+        }
+    }
     .price{
         font-weight: 900;
         color: #171717;
         font-size: 34px;
-        margin-top: 18px;
     }
     .btnArea{
         display: flex;
@@ -140,6 +158,11 @@
         margin-top: 30px;
         .price{
             font-size: 30px;
+        }
+        .beforePrice{
+            span{
+                font-size: 14px;
+            }
         }
         .subInfo{
             font-size: 13px;
