@@ -8,6 +8,7 @@ import qs from 'qs';
 import buyTicketVm from './buyTicketVm'
 import {observer} from 'mobx-react'
 import {post} from '../../common/httpRequest'
+import {templateLink} from '../../common/kakaoModule'
 
 @observer
 class buyTicket extends Component {
@@ -74,6 +75,10 @@ class buyTicket extends Component {
 
     }
 
+    shareSite() {
+        templateLink(24772);
+    }
+
     async afterPayment(data) {
         let msg = '';
         if (data.success) {
@@ -126,7 +131,7 @@ class buyTicket extends Component {
                         <div className={style.subInfo}>* 파이 1개는 서비스 1번 입니다.</div>
                         <div className={style.price}>{this.price}원</div>
                         <div className={style.btnArea}>
-                            <button type="button">공유</button>
+                            <button type="button" onClick={() => this.shareSite()}>kakao 공유</button>
                             {buyTicketVm.tickets && (buyTicketVm.tickets.length ? (
                                 <button type="button" disabled>티켓 보유중</button>
                             ) : (
