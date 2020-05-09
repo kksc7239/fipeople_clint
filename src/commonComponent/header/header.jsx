@@ -54,7 +54,7 @@ class header extends Component {
         if(headerVm.loginData.loginYn) {//로그인 대있으면
             memberNav = 
             <nav className={style.memberNav}>
-                <img className={style.profileImg} alt="프로필사진" title="프로필사진" src={headerVm.memberData.image || '/img/profile_empty.png'}/>
+                <div className={style.profileImg}  style={{backgroundImage: `url(${headerVm.memberData.image || '/img/profile_empty.png'}`}}/>
                 <span className={style.memberText}>{headerVm.memberData.name}님</span>
                 <button type="button" className={style.logout} onClick={() => this.logout()}>Logout</button>
             </nav>

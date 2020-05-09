@@ -36,6 +36,18 @@ function post(url, body, option) {
                 httpRequest.post('/api/auth/refresh-token', {refreshToken : localStorage.getItem('refreshToken')}, {headers: requestOption}).then((res) => {
                     localStorage.setItem("accessToken", res.data.accessToken);
                     resolve(post(url, body, option));
+                }).catch((error) => {
+                    if(error.response.data.message === 'REFRESH_TOO_LATE') {
+                        localStorage.removeItem('loginYn');
+                        localStorage.removeItem('accessToken');
+                        localStorage.removeItem('refreshToken');
+                        localStorage.removeItem('name');
+                        localStorage.removeItem('email');
+                        localStorage.removeItem('image');
+                        location.replace('/');
+                    } else {
+                        reject(error);
+                    }
                 })
             } else {
                 reject(error);
