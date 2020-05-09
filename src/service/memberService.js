@@ -39,7 +39,7 @@ class memberService {
         localStorage.removeItem('name');
         localStorage.removeItem('email');
         localStorage.removeItem('image');
-        location.reload();
+        location.replace('/');
     }
 }
 export default new memberService();
