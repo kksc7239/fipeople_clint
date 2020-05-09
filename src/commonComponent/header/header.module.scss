@@ -41,14 +41,16 @@
             }
         }
         .memberNav{
-            .profileImg{
+          display: inline-block;
+          vertical-align: middle;
+          .profileImg{
                 width: 47px;
                 height: 47px;
                 border-radius: 50%;
                 background-position: center center;
                 background-size: contain;
+                display: inline-block;
             }
-            display: inline-block;
             ul{
                 li{
                     float: left;
@@ -88,6 +90,8 @@
             font-weight: 300;
             color: #fff;
             margin-left: 16px;
+            line-height: 47px;
+            vertical-align: top;
         }
         .logout{
             font-size: 11px;
@@ -97,6 +101,8 @@
             border: none;
             height: 27px;
             margin-left: 35px;
+            vertical-align: top;
+            margin-top: 12px;
             &:hover{
                 transition: 0.3s;
                 color: #fff;
@@ -256,12 +262,17 @@
                 width: 47px;
                 height: 47px;
                 border-radius: 50%;
+              background-position: center center;
+              background-size: contain;
+              display: inline-block;
             }
             .memberText{
                 font-size: 13px;
                 font-weight: 500;
                 color: #303030;
                 margin-left: 12px;
+                line-height: 47px;
+                vertical-align: top;
             }
             .logout{
                 font-size: 11px;
@@ -271,6 +282,8 @@
                 border: none;
                 height: 27px;
                 margin-left: 20px;
+                vertical-align: top;
+                margin-top: 12px;
                 &:hover{
                     transition: 0.3s;
                     color: #fff;
