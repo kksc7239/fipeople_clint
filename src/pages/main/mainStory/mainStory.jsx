@@ -18,10 +18,10 @@ class mainStory extends PureComponent {
                     <div className={style.storyBox}>
                         <div className={style.title}>새로운 친구를 만나는 광장</div>
                         <div className={style.content}>
-                            하루 하루 똑같은 일상의 반복 속에서<br/>새로운 친구를 만나고 싶어 보신적 있나요?<br/>자신과 공통된 이야기가 많은, 잘 맞는 친구를 매칭해드립니다.
+                            MBTI로 주변 사람들과 나와의 궁합을 확인하면서 문득 생각이 들었습니다. <br/>MBTI성격 궁합, 공통사가 잘 맞는사람을 만나보면 어떨까?<br/>친구 관계 혹은 대인 관계에서의 새로운 시도를 해 볼수 있지 않을까?
                         </div>
                         <div className={style.mContent}>
-                            하루 하루 똑같은 일상의 반복 속에서<br/>새로운 친구를 만나고 싶어 보신적 있나요?<br/>자신과 공통된 이야기가 많은,<br/> 잘 맞는 친구를 매칭해드립니다.
+                            MBTI로 주변 사람들과 나와의<br/> 궁합을 확인하면서 문득 생각이 들었습니다. <br/>MBTI성격 궁합, 공통사가 잘 맞는사람을 만나보면 어떨까?<br/>친구 관계 혹은 대인 관계에서의<br/> 새로운 시도를 해 볼수 있지 않을까?
                         </div>
                     </div>
                     <div className={style.storyBox}>

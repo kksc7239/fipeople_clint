@@ -14,7 +14,7 @@ class information extends Component {
                 </div>
                 <div className={style.content}>
                     <UnderlineText>성향 설문</UnderlineText>
-                    <div className={style.imageArea}><img src="/img/info1.png"/></div>
+                    <div className={style.imageArea}><img src="/img/info1.png"/><img src="/img/info1_m.png"/></div>
                     <div className={style.infoText}>
                         딱 10분! 친구 매칭을 위한 간단한 설문 조사를 진행해요.<br/>
                         이 설문은 나와 잘 맞는 친구를 만드는 데에 사용돼요.
@@ -22,7 +22,7 @@ class information extends Component {
                 </div>
                 <div className={style.content}>
                     <UnderlineText>기다림의 시간</UnderlineText>
-                    <div className={style.imageArea}><img src="/img/info2.png"/></div>
+                    <div className={style.imageArea}><img src="/img/info2.png"/><img src="/img/info2_m.png"/></div>
                     <div className={style.infoText}>
                         자신의 티켓을 제출해요. 티켓을 제출한 다른 친구들과 매칭될 수 있어요.<br/>
                         자신이 선택하지 마세요. 인공지능이 앞서 작성한 설문을 기반해 공통률이 높은 친구끼리 매칭해 드립니다.<br/>

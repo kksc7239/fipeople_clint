@@ -11,6 +11,12 @@
         margin-top: 40px;
         img{
             box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.06);
+            &:nth-last-child(1){
+                display: none;
+            }
+            &:nth-child(1){
+                display: inline-block;
+            }
         }
     }
     .infoText{
@@ -46,6 +52,12 @@
             img{
                 width: calc(100% - 32px);
                 margin: 0 16px;
+                &:nth-child(1){
+                    display: none !important;
+                }
+                &:nth-last-child(1){
+                    display: inline-block !important;
+                }
             }
         }
         .infoText{

@@ -18,7 +18,7 @@ class mainImgContent extends PureComponent {
                     TypistFinishYn : false
                 })
             }, 1000);
-        }, 4700);
+        }, 5500);
 
     }
     moveBottom() {
@@ -28,7 +28,7 @@ class mainImgContent extends PureComponent {
         return (
             <div className={style.mainImgContent} id="mainImgContent" style={{height:window.innerHeight+'px'}}>
                 <div className={style.content}>
-                    <div className={style.subMessage}><Typist><Typist.Delay ms={3000} />나와 “공통점” 있는 친구를 만나보세요!</Typist></div>
+                    <div className={style.subMessage}><Typist><Typist.Delay ms={3000} />MBTI를 기반으로 나와 “공통점” 있는 친구를 만나보세요!</Typist></div>
                     <div className={style.mainMessage}><Typist><Typist.Delay ms={700} />나와 “잘 맞는” 친구만들기가<br/>힘들고 까다로우신가요?</Typist></div>
                     <div className={style.btnArea}><Link to='/events'><RoundButton active={this.state.TypistFinishYn}>지금 시작하기</RoundButton></Link></div>
                 </div>
