@@ -20,7 +20,7 @@ class buyTicket extends Component {
         super(props)
 
         if (this.props.location.pathname === '/ticket/complete') {
-            this.afterPayment(qs.parse(this.props.location.search.substring(1)))
+            this.afterPayment(qs.parse(this.props.location.search.substring(1)), true)
         }
         this.state = {
             ticketCount: 1,
@@ -79,9 +79,10 @@ class buyTicket extends Component {
         templateLink(24772);
     }
 
-    async afterPayment(data) {
+    async afterPayment(data, isMobile = false) {
         let msg = '';
-        if (data.success) {
+        let isErr = false;
+        if (isMobile && !data.error_msg || data.success) {
             try {
                 await post('/api/ticket/order/check', {
                     impUid: data.imp_uid,
@@ -94,14 +95,18 @@ class buyTicket extends Component {
                 }
             }
             buyTicketVm.loadTickets();
-        } else {
-
+        } else if (data.error_msg) {
+            isErr = true;
             msg += '결제에 실패하였습니다.';
             msg += '에러내용 : ' + data.error_msg;
-            alert(msg)
+            alert(msg);
+        } else {
+            isErr = true;
+            alert("결제에 실패하였습니다. 관리자에게 문의해주세요.");
         }
-        if(this.props.match.params.redirectUrl === 'ticket') {
-            this.props.history.replace('/ticket/ticket');
+
+        if(this.props.match.params.redirectUrl === 'ticket' || isErr) {
+            this.props.history.replace(`/ticket/ticket`);
         }else{
             this.props.history.replace(`/survey/${this.props.match.params.redirectUrl}`);
         }
