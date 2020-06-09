@@ -18,8 +18,8 @@ class buyTicket extends Component {
 
     constructor(props) {
         super(props)
-
-        if (this.props.location.pathname === '/ticket/complete') {
+        console.log(this.props);
+        if (this.props.match.path === '/ticket/complete/:redirectUrl') {
             this.afterPayment(qs.parse(this.props.location.search.substring(1)), true)
         }
         this.state = {
@@ -61,7 +61,7 @@ class buyTicket extends Component {
                 buyer_email: buyTicketVm.orderInfo.email,
                 buyer_name: buyTicketVm.orderInfo.name,
                 // buyer_tel: '010-0000-1111',
-                m_redirect_url: location.origin + "/ticket/complete"
+                m_redirect_url: `${location.origin}/ticket/complete/${this.props.match.params.redirectUrl}`
             }, (rsp) => {
                 this.afterPayment(rsp);
             });
