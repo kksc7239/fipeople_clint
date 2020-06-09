@@ -25,9 +25,13 @@ class selectMutiple extends Component {
     render() {
         let itemEle = [];
         selectMutipleVm.itemData.forEach((item) => {
+            let isChecked = false;
+            this.state.checkedValList.forEach((checkVal) => {
+                if(parseInt(checkVal) === item.survey_question_item_id) isChecked = true;
+            })
             itemEle.push(
             <div className={style.row} key={item.survey_question_item_id}>
-                <Checkbox name="items" value={item.survey_question_item_id} onChange={(e) => this.onChange(e)}>{item.txt}</Checkbox>
+                <Checkbox name="items" value={item.survey_question_item_id} checked={isChecked} onChange={(e) => this.onChange(e)}>{item.txt}</Checkbox>
             </div>);
         })
         return (

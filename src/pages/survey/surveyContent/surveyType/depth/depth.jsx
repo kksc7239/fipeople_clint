@@ -14,22 +14,22 @@ class depth extends Component {
     }
     onChangeRadio(e) {
         this.setState({
-            checkedVal: e.target.value,
-            checkedValList : []
+            checkedVal: e.target.value
         });
-        depthVm.setData([]);
+        depthVm.setData(this.state.checkedValList, e.target.value);
     }
-    onChangeCheck(e) {
+    onChangeCheck(e, parentId) {
         const checkedValList = this.state.checkedValList;
         let index;
         if(e.target.checked) {
-            checkedValList.push(e.target.value);
+            checkedValList.push({childId : parseInt(e.target.value), parentId : parseInt(parentId)});
         }else {
-            index = checkedValList.indexOf(e.target.value);
+            index = checkedValList.findIndex(item => item.childId === parseInt(e.target.value));
             checkedValList.splice(index, 1);
         }
         this.setState({ checkedValList: checkedValList });
-        depthVm.setData(checkedValList);
+
+        depthVm.setData(checkedValList, parseInt(this.state.checkedVal));
     }
     render() {
         let itemEle = [];
@@ -42,9 +42,13 @@ class depth extends Component {
                 depthVm.itemData.forEach((item2) => {
                     if(item.survey_question_item_id === parseInt(item2.param0)) {
                         if(item2.param0 === this.state.checkedVal) {
+                            let isChecked = false;
+                            this.state.checkedValList.forEach((checkedId) => {
+                                if(checkedId.childId === item2.survey_question_item_id) isChecked = true;
+                            })
                             itemEle.push(
                             <div className={style.row2} key={item2.survey_question_item_id}>
-                                <Checkbox name="items" value={item2.survey_question_item_id} onChange={(e) => this.onChangeCheck(e)}>{item2.txt}</Checkbox>
+                                <Checkbox name="items" value={item2.survey_question_item_id} checked={isChecked} onChange={(e) => this.onChangeCheck(e, item.survey_question_item_id)}>{item2.txt}</Checkbox>
                             </div>);
                         }   
                     }
