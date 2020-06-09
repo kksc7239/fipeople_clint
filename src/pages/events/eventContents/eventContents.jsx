@@ -24,7 +24,7 @@ class eventContents extends Component {
             let evBtn;
             let infoTxt;
             if(item.openstatus === 0) { //진행중
-                infoTxt = <span>{item.cnt}명 참여중 입니다. 진행기간 : {GetDate.getDate(new Date(item.openDate))}<span className={style.space}></span> 발표일 : {GetDate.getDate(new Date(item.closeDate))}</span>
+                infoTxt = <span>(<span className={style.colorFont}>{item.cnt}</span>명 참여중) 진행기간 : {GetDate.getDate(new Date(item.openDate))}<span className={style.space}></span> 발표일 : {GetDate.getDate(new Date(item.closeDate))}</span>
                 if(item.surveyUserStatus === 1) {
                     evBtn = <EventButton width="100%" disabled={true}>잘 맞는 친구를 찾고 있습니다!</EventButton>
                 }else{
@@ -40,7 +40,7 @@ class eventContents extends Component {
                 evBtn = <EventButton width="100%" disabled={true}>진행예정</EventButton>
             }
             if(item.openstatus === 2) {// 마감
-                infoTxt = <span>함께한 친구는 {item.cnt}명 입니다. 다른행사에 참여해주세요</span>
+                infoTxt = <span>(<span className={style.colorFont}>{item.cnt}</span>명 참여) 다른행사에 참여해주세요</span>
                 evBtn = <EventButton width="100%" disabled={true} useYn={false}>본 행사는 마감되었습니다!{item.cnt}</EventButton>
             }
             eventItem.push(
