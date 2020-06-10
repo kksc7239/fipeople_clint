@@ -41,7 +41,7 @@ class eventContents extends Component {
             }
             if(item.openstatus === 2) {// 마감
                 infoTxt = <span>(<span className={style.colorFont}>{item.cnt}</span>명 참여) 다른행사에 참여해주세요</span>
-                evBtn = <EventButton width="100%" disabled={true} useYn={false}>본 행사는 마감되었습니다!{item.cnt}</EventButton>
+                evBtn = <EventButton width="100%" disabled={true} useYn={false}>본 행사는 마감되었습니다!</EventButton>
             }
             eventItem.push(
                 <div className={style.eventItem} key={index}>
