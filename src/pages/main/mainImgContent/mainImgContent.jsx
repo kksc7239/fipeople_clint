@@ -6,10 +6,19 @@ import { Route, Link } from 'react-router-dom';
 
 class mainImgContent extends PureComponent {
     state = {
-        TypistFinishYn : false
+        TypistFinishYn : false,
+        ih: window.innerHeight
     }
     componentDidMount() {
         alert(window.innerHeight);
+        const reportWindowSize = () => {
+            this.setState({
+                ih : window.innerHeight
+            })
+            window.removeEventListener('resize', reportWindowSize);
+        }
+        window.addEventListener('resize', reportWindowSize);
+
         setTimeout(() => {
             this.setState({
                 TypistFinishYn : true
@@ -27,7 +36,7 @@ class mainImgContent extends PureComponent {
     }
     render() {
         return (
-            <div className={style.mainImgContent} id="mainImgContent" style={{height:window.innerHeight+'px'}}>
+            <div className={style.mainImgContent} id="mainImgContent" style={{height:this.state.ih+'px'}}>
                 <div className={style.content}>
                     <div className={style.subMessage}><Typist><Typist.Delay ms={3000} />MBTI를 기반으로 “공통점” 있는 친구를 만나보세요!</Typist></div>
                     <div className={style.mainMessage}><Typist><Typist.Delay ms={700} />나와 “잘 맞는” 친구만들기가<br/>힘들고 까다로우신가요?</Typist></div>
