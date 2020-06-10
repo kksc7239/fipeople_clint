@@ -9,16 +9,17 @@ class mainImgContent extends PureComponent {
         TypistFinishYn : false
     }
     componentDidMount() {
-        // setTimeout(() => {
-        //     this.setState({
-        //         TypistFinishYn : true
-        //     });
-        //     setTimeout(() => {
-        //         this.setState({
-        //             TypistFinishYn : false
-        //         })
-        //     }, 1000);
-        // }, 5500);
+        alert(window.innerHeight);
+        setTimeout(() => {
+            this.setState({
+                TypistFinishYn : true
+            });
+            setTimeout(() => {
+                this.setState({
+                    TypistFinishYn : false
+                })
+            }, 1000);
+        }, 5500);
 
     }
     moveBottom() {
