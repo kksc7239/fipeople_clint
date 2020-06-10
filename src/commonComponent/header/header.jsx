@@ -19,8 +19,6 @@ class header extends Component {
         }
     }
     kakaoLogin(e) {
-        let kakaoWindow;
-
         let loginPopupParam = '';
         if (process.env.NODE_ENV === 'development') {
             loginPopupParam = `?redirect=${encodeURIComponent(process.env.REACT_APP_KAKAO_OAUTH_REDIRECT)}`
