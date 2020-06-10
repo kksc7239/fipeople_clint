@@ -10,7 +10,6 @@ class mainImgContent extends PureComponent {
         ih: window.innerHeight
     }
     componentDidMount() {
-        alert(window.innerHeight);
         const reportWindowSize = () => {
             this.setState({
                 ih : window.innerHeight
