@@ -4,7 +4,6 @@
 
     var params = {};
     window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
-    alert(decodeURIComponent(params.data));
     if(!opener){
         var data = JSON.parse(decodeURIComponent(params.data));
         if(data.isNew === true) { // 회원가입으로 보낸다
