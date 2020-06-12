@@ -4,9 +4,8 @@
 
     var params = {};
     window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
-    alert(opener);
-    alert(JSON.parse(decodeURIComponent(params.data)));
-    if(!opener || opener === window){
+    alert(decodeURIComponent(params.data));
+    if(!opener){
         var data = JSON.parse(decodeURIComponent(params.data));
         if(data.isNew === true) { // 회원가입으로 보낸다
             axios.post('/api/auth/oauth-kakao-join', {
@@ -23,6 +22,7 @@
                 localStorage.setItem("name", data.name);
                 localStorage.setItem("email", data.email);
                 localStorage.setItem("image", apiUrl+data.image.publicPath);
+                alert("환영")
                 location.replace('/');
             })
         }else { // 가입이미 된상태 토큰바로 만든다
