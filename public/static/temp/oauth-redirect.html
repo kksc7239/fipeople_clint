@@ -15,14 +15,13 @@
                 gender : data.gender || null,
                 email : data.email || null,
                 image : data.image && data.image.key || null,
-            }).then((data) => {
+            }).then((reponse) => {
                 localStorage.setItem("loginYn", true);
-                localStorage.setItem("accessToken", data.accessToken);
-                localStorage.setItem("refreshToken", data.refreshToken);
-                localStorage.setItem("name", data.name);
-                localStorage.setItem("email", data.email);
-                localStorage.setItem("image", apiUrl+data.image.publicPath);
-                alert("환영")
+                localStorage.setItem("accessToken", reponse.data.accessToken);
+                localStorage.setItem("refreshToken", reponse.data.refreshToken);
+                localStorage.setItem("name", reponse.data.name);
+                localStorage.setItem("email", reponse.data.email);
+                localStorage.setItem("image", apiUrl+reponse.data.image.publicPath);
                 location.replace('/');
             })
         }else { // 가입이미 된상태 토큰바로 만든다
