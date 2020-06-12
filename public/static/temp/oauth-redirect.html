@@ -1,6 +1,41 @@
+<script src="./axios.min.js"></script>
 <script>
-    var params = {}, data = {};
+    var apiUrl = 'https://pipeople.club';
+
+    var params = {};
     window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str, key, value) { params[key] = value; });
-    opener.popupMessage(JSON.parse(decodeURIComponent(params.data)));
-    window.close();
+    alert(opener);
+    alert(JSON.parse(params));
+    if(!opener || opener === window){
+        var data = JSON.parse(decodeURIComponent(params.data));
+        if(data.isNew === true) { // 회원가입으로 보낸다
+            axios.post('/api/auth/oauth-kakao-join', {
+                id : data.id,
+                state : data.state,
+                name : data.name || null,
+                gender : data.gender || null,
+                email : data.email || null,
+                image : data.image && data.image.key || null,
+            }).then((data) => {
+                localStorage.setItem("loginYn", true);
+                localStorage.setItem("accessToken", data.accessToken);
+                localStorage.setItem("refreshToken", data.refreshToken);
+                localStorage.setItem("name", data.name);
+                localStorage.setItem("email", data.email);
+                localStorage.setItem("image", apiUrl+data.image.publicPath);
+                location.replace('/');
+            })
+        }else { // 가입이미 된상태 토큰바로 만든다
+            localStorage.setItem("loginYn", true);
+            localStorage.setItem("accessToken", data.accessToken);
+            localStorage.setItem("refreshToken", data.refreshToken);
+            localStorage.setItem("name", data.name);
+            localStorage.setItem("email", data.email);
+            localStorage.setItem("image", apiUrl+data.image.publicPath);
+        }
+    } else {
+        opener.popupMessage(JSON.parse(decodeURIComponent(params.data)));
+        window.close();
+    }
+
 </script>
