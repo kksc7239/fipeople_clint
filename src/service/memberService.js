@@ -10,6 +10,7 @@ class memberService {
             name : data.name || null,
             gender : data.gender || null,
             email : data.email || null,
+            ref : data.ref || null,
             image : data.image && data.image.key || null,
         }, {token: false}).then(response => {
             this.logInStorage(response.data);

@@ -13,6 +13,7 @@
                 name : data.name || null,
                 gender : data.gender || null,
                 email : data.email || null,
+                ref : data.ref || null,
                 image : data.image && data.image.key || null,
             }).then((reponse) => {
                 localStorage.setItem("loginYn", true);
