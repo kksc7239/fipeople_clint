@@ -66,7 +66,7 @@ class header extends Component {
                 <div className={style.profileImg}  style={{backgroundImage: `url(${headerVm.memberData.image || '/img/profile_empty.png'}`}}/>
                 <span className={style.memberText}>{headerVm.memberData.name}님</span>
                 <button type="button" className={style.logout} onClick={() => this.logout()}>Logout</button>
-                {adminBtn};
+                {adminBtn}
             </nav>
         }else{
             memberNav = 
