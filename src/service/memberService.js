@@ -18,6 +18,7 @@ class memberService {
     }
     logInStorage(data) {
         localStorage.setItem("loginYn", true);
+        if(data.roles.indexOf('ROLE_ADMIN') !== -1) localStorage.setItem("adminYn", true);
         localStorage.setItem("accessToken", data.accessToken);
         localStorage.setItem("refreshToken", data.refreshToken);
         localStorage.setItem("name", data.name);
@@ -27,14 +28,17 @@ class memberService {
     }
     logInState() {
         loginModel.loginData.loginYn = (localStorage.getItem('loginYn')==='true');
+        loginModel.loginData.adminYn = (localStorage.getItem('adminYn')==='true');
         loginModel.loginData.accessToken = localStorage.getItem('accessToken');
         loginModel.loginData.refreshToken = localStorage.getItem('refreshToken');
         memberModel.memberData.name = localStorage.getItem('name') === 'null' ? null : localStorage.getItem('name');
         memberModel.memberData.email = localStorage.getItem('email') === 'null' ? null : localStorage.getItem('email');
         memberModel.memberData.image = localStorage.getItem('image') === 'null' ? null : localStorage.getItem('image');
+        memberModel.memberData.name = localStorage.getItem('name') === 'null' ? null : localStorage.getItem('name');
     }
     removeLoginStorage() {
         localStorage.removeItem('loginYn');
+        localStorage.removeItem('adminYn');
         localStorage.removeItem('accessToken');
         localStorage.removeItem('refreshToken');
         localStorage.removeItem('name');

@@ -7,15 +7,17 @@ import MainInfo from './mainInfo/mainInfo';
 import TicketInfo from './ticketInfo/ticketInfo';
 import FooterInfo from './footerInfo/footerInfo';
 import Footer from './footer/footer';
+import GetUrlParams from '../../common/getUrlParams';
 
 class main extends Component {
-    constructor(props) {
+    constructor(props) { 
         super(props);
         this.state = {
             headerBackGround : false
         }
     }
     componentDidMount() {
+        localStorage.setItem("eventTarget",GetUrlParams('target'));
         window.addEventListener('scroll', function() {
             this.onScroll();
         }.bind(this));

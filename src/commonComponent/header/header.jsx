@@ -21,7 +21,10 @@ class header extends Component {
     kakaoLogin(e) {
         let loginPopupParam = '';
         if (process.env.NODE_ENV === 'development') {
-            loginPopupParam = `?redirect=${encodeURIComponent(process.env.REACT_APP_KAKAO_OAUTH_REDIRECT)}`
+            loginPopupParam += `?redirect=${encodeURIComponent(process.env.REACT_APP_KAKAO_OAUTH_REDIRECT)}`
+        }
+        if(localStorage.getItem('eventTarget') && localStorage.getItem('eventTarget') !== '') {
+            loginPopupParam += localStorage.getItem('eventTarget');
         }
 
         e.preventDefault();
@@ -32,6 +35,9 @@ class header extends Component {
     }
     logout() {
         headerVm.logout();
+    }
+    adminPage() {
+        alert('adminPage');
     }
     changeOpen() {
         this.setState({
@@ -55,6 +61,7 @@ class header extends Component {
                 <div className={style.profileImg}  style={{backgroundImage: `url(${headerVm.memberData.image || '/img/profile_empty.png'}`}}/>
                 <span className={style.memberText}>{headerVm.memberData.name}님</span>
                 <button type="button" className={style.logout} onClick={() => this.logout()}>Logout</button>
+                <button type="button" className={style.logout} onClick={() => this.adminPage()}>AdminPage</button>
             </nav>
         }else{
             memberNav = 
