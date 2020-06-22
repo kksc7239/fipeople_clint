@@ -24,7 +24,7 @@ class eventService {
                 loginPopupParam += `?redirect=${encodeURIComponent(process.env.REACT_APP_KAKAO_OAUTH_REDIRECT)}`
             }
             if(localStorage.getItem('eventTarget') && localStorage.getItem('eventTarget') !== '') {
-                loginPopupParam += localStorage.getItem('eventTarget');
+                loginPopupParam += `?ref=${localStorage.getItem('eventTarget')}`;
             }
             window.open(`${process.env.REACT_APP_API_URL}/api/auth/oauth-kakao-init${loginPopupParam}`, 'kakaoPopup', 'top=10, left=10, width=500, height=600, status=no, menubar=no, toolbar=no, resizable=no');
             window.popupMessage = function(data) {

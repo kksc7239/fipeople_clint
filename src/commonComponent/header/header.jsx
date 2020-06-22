@@ -24,7 +24,7 @@ class header extends Component {
             loginPopupParam += `?redirect=${encodeURIComponent(process.env.REACT_APP_KAKAO_OAUTH_REDIRECT)}`
         }
         if(localStorage.getItem('eventTarget') && localStorage.getItem('eventTarget') !== '') {
-            loginPopupParam += localStorage.getItem('eventTarget');
+            loginPopupParam += `?ref=${localStorage.getItem('eventTarget')}`;
         }
 
         e.preventDefault();
@@ -56,12 +56,17 @@ class header extends Component {
             mHeaderStyle.push(style.open);
         }
         if(headerVm.loginData.loginYn) {//로그인 대있으면
+            let adminYn = headerVm.memberData.adminYn;
+            let adminBtn ='';
+            if(adminYn) {
+                adminBtn = <button type="button" className={style.logout} onClick={() => this.adminPage()}>AdminPage</button>
+            }
             memberNav = 
             <nav className={style.memberNav}>
                 <div className={style.profileImg}  style={{backgroundImage: `url(${headerVm.memberData.image || '/img/profile_empty.png'}`}}/>
                 <span className={style.memberText}>{headerVm.memberData.name}님</span>
                 <button type="button" className={style.logout} onClick={() => this.logout()}>Logout</button>
-                <button type="button" className={style.logout} onClick={() => this.adminPage()}>AdminPage</button>
+                {adminBtn};
             </nav>
         }else{
             memberNav = 

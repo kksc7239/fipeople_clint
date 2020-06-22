@@ -14,6 +14,7 @@ class memberService {
             image : data.image && data.image.key || null,
         }, {token: false}).then(response => {
             this.logInStorage(response.data);
+            alert('회원가입 무료 티켓이 발급되었습니다.\n지금바로 사용해보세요!');
         });
     }
     logInStorage(data) {
@@ -28,9 +29,9 @@ class memberService {
     }
     logInState() {
         loginModel.loginData.loginYn = (localStorage.getItem('loginYn')==='true');
-        loginModel.loginData.adminYn = (localStorage.getItem('adminYn')==='true');
         loginModel.loginData.accessToken = localStorage.getItem('accessToken');
         loginModel.loginData.refreshToken = localStorage.getItem('refreshToken');
+        memberModel.memberData.adminYn = (localStorage.getItem('adminYn')==='true');
         memberModel.memberData.name = localStorage.getItem('name') === 'null' ? null : localStorage.getItem('name');
         memberModel.memberData.email = localStorage.getItem('email') === 'null' ? null : localStorage.getItem('email');
         memberModel.memberData.image = localStorage.getItem('image') === 'null' ? null : localStorage.getItem('image');
