@@ -5,6 +5,7 @@ import Main from './pages/main/main';
 import Events from './pages/events/events';
 import Survey from './pages/survey/survey';
 import BuyTicket from './pages/buyTicket/buyTicket';
+import Admin from './pages/admin/admin';
 import Information from './pages/information/information'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/ticket/:redirectUrl" exact component={BuyTicket} />
         <Route path="/ticket/complete/:redirectUrl" exact component={BuyTicket} />
         <Route path="/information" component={Information} />
+        <Route exact path="/admin" component={Admin} />
       </Router>
     </div>
   );
