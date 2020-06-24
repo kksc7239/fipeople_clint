@@ -17,7 +17,7 @@ class Admin extends Component {
     }
 
     render() {
-        return (
+        return adminVm.statistics && adminVm.users ? (
             <Fragment>
                 <Header/>
                 <div className={style.topInfo}>
@@ -35,7 +35,7 @@ class Admin extends Component {
                             </tr>
                             </thead>
                             <tbody>
-                            {adminVm.statistics && adminVm.statistics.map(item => (
+                            {adminVm.statistics.map(item => (
                                 <tr key={item.ref || 'NULL'}>
                                     <td>{item.ref || 'NULL'}</td>
                                     <td>{item.count}</td>
@@ -53,7 +53,7 @@ class Admin extends Component {
                             </tr>
                             </thead>
                             <tbody>
-                            {adminVm.users && adminVm.users.map(item => (
+                            { adminVm.users.map(item => (
                                 <tr key={item.user_id}>
                                     <td>{item.user_id}</td>
                                     <td>{item.email}</td>
@@ -66,7 +66,7 @@ class Admin extends Component {
                     </Content>
                 </div>
             </Fragment>
-        );
+        ) : (<Fragment/>);
     }
 }
 
