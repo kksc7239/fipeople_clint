@@ -33,6 +33,9 @@ function get(url, body, option) {
                 })
             }else if(error.response.data.message === 'ACCESS_TOKEN_INVALID') {
                 alert('로그인이 필요합니다.');
+            }else if(error.response.data.message === 'ACCESS_PERMISSION_DENIED') {
+                alert('권한이 없습니다.');
+                location.replace('/');
             }else {
                 reject(error);
             }
@@ -67,6 +70,9 @@ function post(url, body, option) {
                 })
             }else if(error.response.data.message === 'ACCESS_TOKEN_INVALID') {
                 alert('로그인이 필요합니다.');
+            }else if(error.response.data.message === 'ACCESS_PERMISSION_DENIED') {
+                alert('권한이 없습니다.');
+                location.replace('/');
             }else {
                 reject(error);
             }
