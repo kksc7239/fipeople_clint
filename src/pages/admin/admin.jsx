@@ -4,6 +4,7 @@ import Content from '../../commonComponent/contentBox/content';
 import style from './admin.module.scss';
 import {withRouter} from 'react-router';
 import {observer} from 'mobx-react'
+import moment from 'moment';
 import adminVm from './adminVm'
 
 @observer
@@ -50,6 +51,7 @@ class Admin extends Component {
                                 <th>ID</th>
                                 <th>E-MAIL</th>
                                 <th>REF</th>
+                                <th>JOIN DATE</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -58,6 +60,8 @@ class Admin extends Component {
                                     <td>{item.user_id}</td>
                                     <td>{item.email}</td>
                                     <td>{item.ref === null ? 'NULL' : item.ref}</td>
+                                    <td>{moment(new Date(item.create_date)).format('YYYY-MM-DD HH:mm')}</td>
+
                                 </tr>
                             ))}
                             </tbody>
