@@ -71,6 +71,7 @@
             if (data.image) {
                 localStorage.setItem("image", apiUrl+data.image.publicPath);
             }
+            location.replace('/');
         }
     } else {
         opener.popupMessage(JSON.parse(decodeURIComponent(params.data)));
