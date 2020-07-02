@@ -39,6 +39,7 @@
                 localStorage.setItem("email", reponse.data.email);
                 localStorage.setItem("image", apiUrl+reponse.data.image.publicPath);
                 window.fbq('track', 'CompleteRegistration');
+                alert('회원가입 무료 티켓이 발급되었습니다.\n지금바로 사용해보세요!');
                 location.replace('/');
             })
         }else { // 가입이미 된상태 토큰바로 만든다
