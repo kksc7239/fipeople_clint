@@ -54,7 +54,10 @@
                 localStorage.setItem("refreshToken", reponse.data.refreshToken);
                 localStorage.setItem("name", reponse.data.name);
                 localStorage.setItem("email", reponse.data.email);
-                localStorage.setItem("image", apiUrl+reponse.data.image.publicPath);
+                localStorage.removeItem("image");
+                if (reponse.data.image) {
+                    localStorage.setItem("image",  apiUrl+reponse.data.image.publicPath);
+                }
                 window.fbq('track', 'CompleteRegistration');
                 alert('회원가입 무료 티켓이 발급되었습니다.\n지금바로 사용해보세요!');
                 location.replace('/');
@@ -65,7 +68,9 @@
             localStorage.setItem("refreshToken", data.refreshToken);
             localStorage.setItem("name", data.name);
             localStorage.setItem("email", data.email);
-            localStorage.setItem("image", apiUrl+data.image.publicPath);
+            if (data.image) {
+                localStorage.setItem("image", apiUrl+data.image.publicPath);
+            }
         }
     } else {
         opener.popupMessage(JSON.parse(decodeURIComponent(params.data)));
