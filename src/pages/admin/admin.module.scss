@@ -30,6 +30,20 @@
 
 }
 
+.adminMenu {
+  margin-top: 15px;
+  li {
+    display: inline-block;
+    a {
+      text-decoration: none;
+      color: #ffffff;
+      margin-right: 15px;
+      font-size: 18px;
+      opacity: 0.75;
+    }
+  }
+}
+
 .contentBoxItem2 {
   table {
     @extend %table;

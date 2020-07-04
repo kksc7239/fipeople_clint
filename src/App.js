@@ -18,7 +18,7 @@ function App() {
         <Route path="/ticket/:redirectUrl" exact component={BuyTicket} />
         <Route path="/ticket/complete/:redirectUrl" exact component={BuyTicket} />
         <Route path="/information" component={Information} />
-        <Route exact path="/admin" component={Admin} />
+        <Route path="/admin" component={Admin} />
       </Router>
     </div>
   );

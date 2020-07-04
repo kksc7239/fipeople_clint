@@ -42,6 +42,7 @@ class AdminUser extends Component {
                             <thead>
                             <tr>
                                 <th>ID</th>
+                                <th style={{width:80}}>IMAGE</th>
                                 <th>E-MAIL</th>
                                 <th>REF</th>
                                 <th>JOIN DATE</th>
@@ -51,6 +52,7 @@ class AdminUser extends Component {
                             { adminVm.users.map(item => (
                                 <tr key={item.user_id}>
                                     <td>{item.user_id}</td>
+                                    <td><img src={item.image ? process.env.REACT_APP_API_URL + item.image.publicPath : '/img/profile_empty.png'} style={{width:'100%'}}/></td>
                                     <td>{item.email}</td>
                                     <td>{item.ref === null ? 'NULL' : item.ref}</td>
                                     <td>{moment(new Date(item.create_date)).format('YYYY-MM-DD HH:mm')}</td>
