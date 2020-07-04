@@ -41,7 +41,7 @@ class main extends Component {
                     headerBackGround : false
                 })
             } 
-        };
+        }
     }
     render() {
         return (

@@ -11,8 +11,24 @@ class AdminVm {
         return adminModel.statistics;
     }
 
-    loadStatistics() {
-        adminService.loadStatistics()
+    get surveyList() {
+        return adminModel.surveyList;
+    }
+
+    get surveyDetail() {
+        return adminModel.surveyDetail;
+    }
+
+    loadUserStatistics() {
+        adminService.loadUserStatistics()
+    }
+
+    loadSurveyList() {
+        adminService.loadSurveyList()
+    }
+
+    loadSurveyDetail(surveyId) {
+        adminService.loadSurveyDetail(surveyId)
     }
 }
 export default new AdminVm();
