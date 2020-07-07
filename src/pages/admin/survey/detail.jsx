@@ -21,7 +21,25 @@ class AdminSurvey extends Component {
         return adminVm.surveyDetail ? (
             <Fragment>
                 <div className={style.contentBox} >
-                    <Content width={960} padding={'30px 40px'}>
+                    <Content width={2560} padding={'30px 40px'}>
+                        <table className={[style.table, style['table-bordered']].join(' ')}>
+                            <thead>
+                            <tr>
+                                <th>REF</th>
+                                <th>COUNT</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {adminVm.surveyDetail.statistics.map(item => (
+                                <tr key={item.ref || 'NULL'}>
+                                    <td>{item.ref || 'NULL'}</td>
+                                    <td>{item.count}</td>
+                                </tr>
+                            ))}
+                            </tbody>
+                        </table>
+
+
                         <table className={[style.table, style['table-bordered']].join(' ')}>
                             <thead>
                             <tr>
@@ -31,6 +49,8 @@ class AdminSurvey extends Component {
                                 <th>MBTI</th>
                                 <th>성별</th>
                                 <th>이메일</th>
+                                <th>REF</th>
+                                <th>날짜</th>
                                 { adminVm.surveyDetail.cols.map((col, i) => (<th key={i}>{col}</th>))}
                             </tr>
                             </thead>
@@ -43,6 +63,8 @@ class AdminSurvey extends Component {
                                     <td>{item.mbti}</td>
                                     <td>{item.gender}</td>
                                     <td>{item.email}</td>
+                                    <td>{item.ref}</td>
+                                    <td>{moment(new Date(item.create_date)).format('YYYY-MM-DD HH:mm')}</td>
                                     { adminVm.surveyDetail.cols.map((col, i) => (<td key={i}>{item[`q${i}_res`]}</td>))}
 
                                 </tr>

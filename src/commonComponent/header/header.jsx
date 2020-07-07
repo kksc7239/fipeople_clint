@@ -59,7 +59,7 @@ class header extends Component {
             let adminYn = headerVm.memberData.adminYn;
             let adminBtn ='';
             if(adminYn) {
-                adminBtn = <Link to="/admin" className={[style.logout, style.adminBtn].join(' ')}>AdminPage</Link>
+                adminBtn = <Link to="/admin/user" className={[style.logout, style.adminBtn].join(' ')}>AdminPage</Link>
             }
             memberNav = 
             <nav className={style.memberNav}>
