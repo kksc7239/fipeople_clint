@@ -48,7 +48,7 @@ class surveyContent extends Component {
             surveyContentVm.loadTickets();
             btnText = '파이티켓 사용하기';
             questionTxt = <span>매칭을 위한 설문을 완료했습니다.<br/> 파이를 사용하여<br/> 나와 잘 맞는 친구를 찾아보세요!</span>;
-            surveyTypeContent = <span style={{lineHeight:'1.2'}}>설문이 끝났습니다.<br/>10분 내로 성향분석 결과가 문자나 카카오톡으로 전송됩니다.<br/>전송받지 못한 경우 사이트메인 하단에 <span style={{color:'#ff6f61'}}>'톡 상담'</span> 버튼을 이용해 주세요.<br/><br/><span style={{color:'#ff6f61'}}>티켓을 사용</span>해 매칭을 신청하면<br/><span style={{color:'#ff6f61'}}>{surveyContentVm.resultDate}</span>에 서로에게 매칭과 함께 질문지가 발송됩니다.<br/>지금바로 티켓을 구매해보세요!</span>;
+            surveyTypeContent = <span style={{lineHeight:'1.2'}}>설문이 끝났습니다. <br/>매칭을 끝까지 완료하려면 파이티켓을 이용해주세요.<br/>파이티켓을 사용하면 10분내로 성향분석 결과가 문자나 카카오톡으로 전송됩니다.<br/>전송받지 못한 경우 사이트메인 하단에 <span style={{color:'#ff6f61'}}>'톡 상담'</span> 버튼을 이용해 주세요.<br/><br/><span style={{color:'#ff6f61'}}>티켓을 사용</span>해 매칭을 신청하면<br/><span style={{color:'#ff6f61'}}>{surveyContentVm.resultDate}</span>에 서로에게 매칭과 함께 질문지가 발송됩니다.<br/><br/>나와 잘 맞는 새로운 친구들이 기다리고 있어요! <br/><span style={{color:'#ff6f61'}}>파이피플</span>은 잘 맞는 친구를 매칭하기위해 노력할게요 ᕕ( ᐛ )ᕗ</span>;
             window.fbq('track', 'SubmitApplication');
         }
         return (
