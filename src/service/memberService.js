@@ -14,7 +14,6 @@ class memberService {
             image : data.image && data.image.key || null,
         }, {token: false}).then(response => {
             this.logInStorage(response.data);
-            alert('회원가입 무료 티켓이 발급되었습니다.\n지금바로 사용해보세요!');
         });
     }
     logInStorage(data) {
