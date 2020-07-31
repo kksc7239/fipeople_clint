@@ -1,4 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="https://pipeople.club/">
+    <meta property="og:title" content="친구찾기, 동네친구찾기, MBTI친구찾기, 공통사매칭 - 파이피플(pipeople)">
+    <meta property="og:description" content="친구찾기, 동네친구찾기, MBTI친구찾기, 공통사매칭, 나와 잘 맞는 동네친구 찾기 프로젝트">
+    <meta property="og:image" content="https://pipeople.club/img/tmp/eventTmpImg_3.png">
+    <meta property="og:url" content="https://pipeople.club">
+    <meta name="keywords" content="친구찾기, 동네친구찾기, MBTI친구찾기, 공통사매칭, 나와 잘 맞는 동네친구 찾기 프로젝트">
+    <meta name="description" content="친구찾기, 동네친구찾기, MBTI친구찾기, 공통사매칭, 나와 잘 맞는 동네친구 찾기 프로젝트">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIPEOPLE</title>
+</head>
+<body>
 <script src="./axios.min.js"></script>
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '724013908349278');
+    fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+               src="https://www.facebook.com/tr?id=724013908349278&ev=PageView&noscript=1"
+/></noscript>
 <script>
     var apiUrl = 'https://pipeople.club';
 
@@ -21,7 +54,12 @@
                 localStorage.setItem("refreshToken", reponse.data.refreshToken);
                 localStorage.setItem("name", reponse.data.name);
                 localStorage.setItem("email", reponse.data.email);
-                localStorage.setItem("image", apiUrl+reponse.data.image.publicPath);
+                localStorage.removeItem("image");
+                if (reponse.data.image) {
+                    localStorage.setItem("image",  apiUrl+reponse.data.image.publicPath);
+                }
+                window.fbq('track', 'CompleteRegistration');
+                alert('회원가입 무료 티켓이 발급되었습니다.\n지금바로 사용해보세요!');
                 location.replace('/');
             })
         }else { // 가입이미 된상태 토큰바로 만든다
@@ -30,11 +68,14 @@
             localStorage.setItem("refreshToken", data.refreshToken);
             localStorage.setItem("name", data.name);
             localStorage.setItem("email", data.email);
-            localStorage.setItem("image", apiUrl+data.image.publicPath);
+            if (data.image) {
+                localStorage.setItem("image", apiUrl+data.image.publicPath);
+            }
+            location.replace('/');
         }
     } else {
         opener.popupMessage(JSON.parse(decodeURIComponent(params.data)));
         window.close();
     }
-
 </script>
+</body>

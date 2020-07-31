@@ -109,6 +109,12 @@
                 background-color: rgba($color: #ff6f61, $alpha: 1.0);
             }
         }
+        .adminBtn {
+          display: inline-block;
+          line-height: 27px;
+          padding: 0 6px;
+          text-decoration: none;
+        }
     }
     &.backGroundHeader{
         background-color: #fff;
@@ -161,6 +167,13 @@
                 background-color: rgba($color: #ff6f61, $alpha: 1.0)
             }
         }
+
+      .adminBtn {
+        display: inline-block;
+        line-height: 27px;
+        padding: 0 6px;
+        text-decoration: none;
+      }
     }
 }
 .mHeader{
@@ -290,6 +303,13 @@
                     background-color: rgba($color: #ff6f61, $alpha: 1.0)
                 }
             }
+
+          .adminBtn {
+            display: inline-block;
+            line-height: 27px;
+            padding: 0 6px;
+            text-decoration: none;
+          }
         }
         ul{
             margin-top: 50px;

@@ -76,6 +76,7 @@ class buyTicket extends Component {
     }
 
     shareSite() {
+        fbq('track', 'Donate');
         templateLink(24772);
     }
 
@@ -88,7 +89,9 @@ class buyTicket extends Component {
                     impUid: data.imp_uid,
                     merchantUid: data.merchant_uid,
                 }, {token: true});
+                window.fbq('track', 'Purchase', {value: 8400, currency: 'KRW'});
                 alert('결제가 완료되었습니다.');
+
             } catch (e) {
                 if (e.message === 'ALREADY_HAVE_TICKET') {
                     alert('이미 티켓을 보유하고 있습니다.');

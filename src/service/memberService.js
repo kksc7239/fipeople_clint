@@ -14,6 +14,8 @@ class memberService {
             image : data.image && data.image.key || null,
         }, {token: false}).then(response => {
             this.logInStorage(response.data);
+            window.fbq('track', 'CompleteRegistration');
+            alert('회원가입 무료 티켓이 발급되었습니다.\n지금바로 사용해보세요!');
         });
     }
     logInStorage(data) {
@@ -23,7 +25,10 @@ class memberService {
         localStorage.setItem("refreshToken", data.refreshToken);
         localStorage.setItem("name", data.name);
         localStorage.setItem("email", data.email);
-        localStorage.setItem("image", process.env.REACT_APP_API_URL+data.image.publicPath);
+        if (data.image) {
+            localStorage.setItem("image", process.env.REACT_APP_API_URL+data.image.publicPath);
+        }
+
         this.logInState();
     }
     logInState() {
