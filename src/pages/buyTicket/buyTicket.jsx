@@ -127,25 +127,27 @@ class buyTicket extends Component {
                 </div>
                 <div className={style.contentBox} hidden={!buyTicketVm.tickets}>
                     <Content width={420} padding={'30px 40px'}>
-                        <div className={style.title}>나와 잘 맞는 친구 찾기</div>
-                        <div className={style.ticketImg}>
-                            <span className={style.bg}><img src="/img/ticketImg.png"/></span>
-                        </div>
-                        <div className={style.countWrapper}>
-                            {/*<button type="button" className={style.mBtn} onClick={() => this.changeCount('min')}></button>*/}
-                            <span>파이티켓 <span className={style.count}>{this.state.ticketCount}</span> 개</span>
-                            {/*<button type="button" className={style.pBtn} onClick={() => this.changeCount('plus')}></button>*/}
-                        </div>
-                        <div className={style.subInfo}>* 파이 1개는 서비스 1번 입니다.</div>
-                        <div className={style.beforePrice}><span>12,000원</span></div>
-                        <div className={style.price}>8,400원</div>
-                        <div className={style.btnArea}>
-                            <button type="button" onClick={() => this.shareSite()}>kakao 공유</button>
-                            {buyTicketVm.tickets && (buyTicketVm.tickets.length ? (
-                                <button type="button" disabled>티켓 보유중</button>
-                            ) : (
-                                <button type="button" onClick={() => this.openPaymentPopup()}>구매하기</button>
-                            ))}
+                        <div style={{textAlign:"center"}}>
+                            <div className={style.title}>나와 잘 맞는 친구 찾기</div>
+                            <div className={style.ticketImg}>
+                                <span className={style.bg}><img src="/img/ticketImg.png"/></span>
+                            </div>
+                            <div className={style.countWrapper}>
+                                {/*<button type="button" className={style.mBtn} onClick={() => this.changeCount('min')}></button>*/}
+                                <span>파이티켓 <span className={style.count}>{this.state.ticketCount}</span> 개</span>
+                                {/*<button type="button" className={style.pBtn} onClick={() => this.changeCount('plus')}></button>*/}
+                            </div>
+                            <div className={style.subInfo}>* 파이 1개는 서비스 1번 입니다.</div>
+                            <div className={style.beforePrice}><span>12,000원</span></div>
+                            <div className={style.price}>8,400원</div>
+                            <div className={style.btnArea}>
+                                <button type="button" onClick={() => this.shareSite()}>kakao 공유</button>
+                                {buyTicketVm.tickets && (buyTicketVm.tickets.length ? (
+                                    <button type="button" disabled>티켓 보유중</button>
+                                ) : (
+                                    <button type="button" onClick={() => this.openPaymentPopup()}>구매하기</button>
+                                ))}
+                            </div>
                         </div>
                     </Content>
                 </div>
