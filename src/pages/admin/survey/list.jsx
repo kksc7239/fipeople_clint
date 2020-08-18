@@ -26,7 +26,6 @@ class AdminSurvey extends Component {
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th style={{width:150}}>썸네일</th>
                                 <th>이름</th>
                                 <th>기간</th>
                                 <th>발표일</th>
@@ -37,7 +36,6 @@ class AdminSurvey extends Component {
                             { adminVm.surveyList.map(item => (
                                 <tr key={item.id}>
                                     <td>{item.id}</td>
-                                    <td><img src={process.env.REACT_APP_API_URL + item.image.publicPath} style={{width:'100%'}}/></td>
                                     <td>{item.name}</td>
                                     <td>{`${moment(new Date(item.openDate)).format('YYYY-MM-DD HH:mm')} ~ ${moment(new Date(item.closeDate)).format('YYYY-MM-DD HH:mm')}`}</td>
                                     <td>{moment(new Date(item.resultDate)).format('YYYY-MM-DD HH:mm')}</td>
